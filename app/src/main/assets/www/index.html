@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+	<link href="ratchet.css" rel="stylesheet">
+	<link href="ratchet-theme.css" rel="stylesheet">
+	<style>
+		body {
+			top: env(safe-area-inset-top)
+		}
+
+		.bar-nav {
+			top: env(safe-area-inset-top)
+		}
+	</style>
+	<script src="cordova.js"></script>
+	<script src="force.js"></script>
+	<!--	<script src="plugins/cordova-plugin-camera/www/Camera.js"></script>-->
+
+	<script>
+
+		/* Do login */
+		force.login(
+			function () {
+				console.log('Auth succeeded');
+			},
+			function (error) {
+				console.log('Auth failed: ' + error);
+			}
+		);
+		function openCamera(){
+
+			navigator.camera.getPicture(
+				function successUpdate() {
+					alert('Success');
+				},
+				function errorUpdate(error) {
+					alert('errorUpdate' + error);
+				}
+			);
+
+		}
+
+		/* This method will render a list of contacts from current salesforce org */
+		function showUser(creds) {
+			fetchRecords(creds.userId, function (data) {
+				userId = creds.userId;
+				var users = data.records;
+				console.log('Success SOQL');
+				console.log(users[0].MediumPhotoUrl);
+				var name = users[0].Name;
+				var mediumImg = users[0].SmallBannerPhotoUrl;
+
+				var backImageHeader = ('https://na174.lightning.force.com/' + mediumImg + '?oauth_token=' +
+					creds.accessToken);
+
+
+				document.getElementsByClassName('logout-btn-container')[0].style.backgroundImage = 'url(\'' +
+					backImageHeader + '\')';
+
+				document.getElementById('hello').innerText = 'Welcome ' + users[0].FirstName;
+
+
+				document.getElementById('photo').innerHTML =
+					'<img class="avatar" src = "https://na174.lightning.force.com/' + users[0].MediumPhotoUrl +
+					'?oauth_token=' +
+					creds.accessToken + ' ">';
+
+
+				document.getElementById('fname-text').innerText = users[0].FirstName;
+				document.getElementById('lname-text').innerText = users[0].LastName;
+				document.getElementById('nickname-text').innerText = users[0].CommunityNickname;
+				document.getElementById('country-text').innerText = users[0].Country;
+				document.getElementById('email-text').innerText = users[0].Email;
+				document.getElementById('mobile-text').innerText = users[0].Phone;
+
+			});
+		};
+
+		function logout() {
+			var sfOAuthPlugin = cordova.require('com.salesforce.plugin.oauth');
+			sfOAuthPlugin.logout();
+		}
+
+		function salesforceSessionRefreshed(creds) {
+			window.userID = creds.userId;
+			showUser(creds);
+		}
+
+
+		/* This method will fetch a list of contact records from salesforce.
+		Just change the soql query to fetch another sobject. */
+
+		var fetchRecords = function (credsId, successHandler) {
+			var soql =
+				'SELECT id,Name,TimeZoneSidKey,Username, MobilePhone, Phone, SmallBannerPhotoUrl, CommunityNickname, MediumPhotoUrl, ' +
+				'Alias,Country,Email,FirstName,LastName,IsActive,IsPortalEnabled FROM User WHERE ID = \'' +
+				credsId +
+				'\'';
+
+			force.query(soql, successHandler, function (error) {
+				alert('Failed to fetch contacts: ' + error);
+			});
+		};
+		var userId;
+		var editId;
+		function editFieldGetId(object) {
+			editId = object.id;
+			document.getElementById('value').placeholder = object.id;
+			if (editId == 'Phone') {
+				document.getElementById('value').placeholder = '375_ _ _ _ _ _ _ _ _';
+				document.getElementById('value').pattern = '[7|8|9|(375)][0-9]{9|11}';
+			}
+			if (editId == 'Email') {
+				document.getElementById('value').placeholder = 'Email@mail.ru';
+				document.getElementById('value').type = 'email';
+			}
+			toggleModal();
+		}
+
+		function saveFieldAfterEdit() {
+			var inputText = document.getElementById('value').value;
+			if (inputText !== '') {
+				force.update(
+					'User',
+					{'id': userId, [editId]: inputText},
+					function successUpdate() {
+						force.login(
+							function () {
+								console.log('Auth succeeded');
+							},
+							function (error) {
+								console.log('Auth failed: ' + error);
+							}
+						);
+						alert('Success');
+						toggleModal();
+					},
+					function errorUpdate(error) {
+						alert('errorUpdate' + error);
+					}
+				);
+			} else {
+				alert('Please, fill input field.');
+			}
+		}
+
+		// function savePhoto() {
+		// 	force.chatter(
+		// 		setPhoto(communityId, userId, fileUpload)
+		//
+		// 		function successUpdate() {
+		// 			alert('Success');
+		// 		},
+		// 		function errorUpdate(error) {
+		// 			alert('errorUpdate' + error);
+		// 		}
+		// 	);
+		// }
+
+
+	</script>
+	<style>
+		table {
+			font-family: Arial, Helvetica, sans-serif;
+			width: 100%;
+		}
+
+		tr {
+			padding: 2%;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		body {
+			width: 100%;
+			/*height: 300px;*/
+		}
+
+		.container {
+			background: rgba(170, 179, 255, 0.38);
+		}
+
+		.logout-btn-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 5%;
+			font-family: Arial, Helvetica, sans-serif;;
+			background-size: cover;
+		}
+
+		.welcome-text {
+			font-size: 20px;
+			font-weight: bold;
+			color: white;
+		}
+
+		.logout-btn {
+			font-family: Arial, Helvetica, sans-serif;;
+			border-radius: 7px;
+			cursor: pointer;
+			color: white;
+			font-size: 15px;
+			font-weight: bold;
+			padding: 9px 23px;
+			text-decoration: none;
+			background: rgba(244, 255, 243, 0.2) no-repeat;
+		}
+
+		.logout-btn:active {
+			position: relative;
+			top: 1px;
+		}
+
+		.avatar-container {
+			justify-content: center;
+		}
+
+		.avatar {
+			border-radius: 100px;
+			border: 5px solid rgba(16, 74, 255, 0.49);
+		}
+
+
+		.modal {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			visibility: hidden;
+			transform: scale(1.1);
+			transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+		}
+
+		.modal-content {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			padding: 1rem 1.5rem;
+			width: 24rem;
+			border-radius: 0.5rem;
+		}
+
+		.close-button {
+			float: right;
+			width: 1.5rem;
+			line-height: 1.5rem;
+			text-align: center;
+			cursor: pointer;
+			border-radius: 0.25rem;
+			background-color: lightgray;
+		}
+
+		.close-button:hover {
+			background-color: darkgray;
+		}
+
+		.show-modal {
+			opacity: 1;
+			visibility: visible;
+			transform: scale(1.0);
+			transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+		}
+
+		.submit-modal {
+			border-radius: 15px;
+			border: 5px solid;
+			background: rgb(64, 157, 64);
+			color: white;
+			padding: 14px 25px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+		}
+
+		.submit-modal:hover,
+		.submit-modal:active {
+			background: green;
+		}
+
+
+	</style>
+</head>
+
+<body class="container">
+
+<!--<button class="trigger">Click here to trigger the modal!</button>-->
+
+<div class="modal">
+	<div class="modal-content">
+		<span class="close-button" onclick="toggleModal()">&times;</span>
+
+		<form onsubmit="saveFieldAfterEdit()">
+			<label for="value">Enter value:</label>
+			<input id="value" required type="text" name="value">
+			<button class="submit-modal" type="submit">Submit</button>
+		</form>
+
+	</div>
+</div>
+
+<div class="logout-btn-container">
+
+	<p class="welcome-text" id="hello"></p>
+	<button class="logout-btn" onclick="logout()">
+		Logout
+	</button>
+</div>
+<br>
+<button onclick="openCamera()">
+	makePhoto
+</button>
+<table id="myTable">
+	<thead>
+
+	</thead>
+	<tbody>
+	<tr class="avatar-container">
+
+		<td id="photo" colspan="3"></td>
+
+	</tr>
+	<tr>
+		<td>FirstName:</td>
+		<td id="fname-text"></td>
+		<td>
+			<button id="FirstName" onclick="editFieldGetId(this)">Edit</button>
+		</td>
+	</tr>
+	<tr>
+		<td>LastName:</td>
+		<td id="lname-text"></td>
+		<td>
+			<button id="LastName" onclick="editFieldGetId(this)">Edit</button>
+		</td>
+	</tr>
+	<tr>
+		<td>Nickname:</td>
+		<td id="nickname-text"></td>
+		<td>
+			<button id="CommunityNickname" onclick="editFieldGetId(this)">Edit</button>
+		</td>
+	</tr>
+	<tr>
+		<td>Country:</td>
+		<td id="country-text"></td>
+		<td>
+			<button id="Country" onclick="editFieldGetId(this)">Edit</button>
+		</td>
+	</tr>
+	<tr>
+		<td>Email:</td>
+		<td id="email-text"></td>
+		<td>
+			<button id="Email" onclick="editFieldGetId(this)">Edit</button>
+		</td>
+	</tr>
+	<tr>
+		<td>Phone:</td>
+
+		<td id="mobile-text"></td>
+
+		<td>
+			<button id="Phone" onclick="editFieldGetId(this)">Edit</button>
+		</td>
+
+	</tr>
+
+	</tbody>
+</table>
+
+</body>
+<script>
+	var modal = document.querySelector('.modal');
+	var trigger = document.querySelector('.trigger');
+	var closeButton = document.querySelector('.close-button');
+
+	function toggleModal() {
+		modal.classList.toggle('show-modal');
+	}
+
+	function windowOnClick(event) {
+		if (event.target === modal) {
+			toggleModal();
+		}
+	}
+
+	trigger.addEventListener('click', toggleModal);
+	closeButton.addEventListener('click', toggleModal);
+	window.addEventListener('click', windowOnClick);
+</script>
+</html>

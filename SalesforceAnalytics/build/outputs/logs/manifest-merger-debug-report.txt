@@ -1,0 +1,47 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:3:1-12:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:3:1-12:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:3:1-12:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:3:1-12:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:3:1-12:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:3:1-12:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:3:1-12:12
+	package
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:4:2-47
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:6:2-29
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:3:11-69
+	android:versionCode
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:5:2-26
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:8:2-64
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:8:19-61
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:9:2-76
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:9:19-73
+application
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:11:5-20
+uses-sdk
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml

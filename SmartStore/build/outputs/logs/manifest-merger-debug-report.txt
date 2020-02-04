@@ -1,0 +1,47 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:3:1-15:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:3:1-15:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:3:1-15:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:3:1-15:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:3:1-15:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:3:1-15:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:3:1-15:12
+	package
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:4:2-48
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:6:2-29
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:3:11-69
+	android:versionCode
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:5:2-26
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+application
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:8:2-14:16
+activity#com.salesforce.androidsdk.smartstore.ui.SmartStoreInspectorActivity
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:11:9-13:30
+	android:exported
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:13:4-28
+	android:theme
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:12:4-40
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml:11:19-101
+uses-sdk
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/AndroidManifest.xml

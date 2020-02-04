@@ -1,0 +1,228 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.salesforce.androidsdk"
+4    android:versionCode="67"
+5    android:versionName="8.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+11-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:103:5-80
+11-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:103:22-77
+12    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+12-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:104:5-71
+12-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:104:22-68
+13    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+13-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:105:5-74
+13-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:105:22-71
+14    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+14-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:106:5-74
+14-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:106:22-71
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:107:5-81
+15-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:107:22-78
+16    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+16-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:108:5-88
+16-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:108:22-85
+17
+18    <!-- USE_FINGERPRINT is available from API 23 to API 27 and should be removed once minAPI > 27 -->
+19    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+19-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:111:5-74
+19-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:111:22-71
+20
+21    <!-- USE_BIOMETRIC is available on API 28 and higher -->
+22    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+22-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:114:5-72
+22-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:114:22-69
+23
+24    <application>
+24-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:8:5-101:19
+25
+26        <!-- Metadata for supported app restrictions -->
+27        <meta-data
+27-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:11:9-12:56
+28            android:name="android.content.APP_RESTRICTIONS"
+28-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:11:20-67
+29            android:resource="@xml/app_restrictions" />
+29-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:12:13-53
+30
+31        <!-- Service required for authentication -->
+32        <service
+32-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:15:9-22:19
+33            android:name="com.salesforce.androidsdk.auth.AuthenticatorService"
+33-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:16:13-79
+34            android:exported="true" >
+34-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:15:18-41
+35            <intent-filter>
+35-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:17:13-19:29
+36                <action android:name="android.accounts.AccountAuthenticator" />
+36-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:18:17-80
+36-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:18:25-77
+37            </intent-filter>
+38
+39            <meta-data
+39-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:20:13-21:57
+40                android:name="android.accounts.AccountAuthenticator"
+40-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:20:24-76
+41                android:resource="@xml/authenticator" />
+41-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:21:17-54
+42        </service>
+43
+44        <!-- Login activity -->
+45        <!--
+46            Launch mode of "singleInstance" ensures that the activity isn't restarted
+47            by a callback from Chrome custom tab when auth flow is complete. This is
+48            required for the Chrome custom tab auth flow to work correctly.
+49        -->
+50        <activity
+50-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:30:9-33:52
+51            android:name="com.salesforce.androidsdk.ui.LoginActivity"
+51-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:30:19-76
+52            android:launchMode="singleInstance"
+52-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:32:13-48
+53            android:screenOrientation="portrait"
+53-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:33:13-49
+54            android:theme="@style/SalesforceSDK" />
+54-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:31:13-49
+55
+56        <!-- Passcode activity -->
+57        <activity
+57-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:36:9-40:61
+58            android:name="com.salesforce.androidsdk.ui.PasscodeActivity"
+58-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:36:19-79
+59            android:exported="false"
+59-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:37:13-37
+60            android:screenOrientation="portrait"
+60-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:38:13-49
+61            android:theme="@style/SalesforceSDK.Passcode"
+61-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:40:13-58
+62            android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
+62-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:39:13-74
+63
+64        <!-- Manage space activity -->
+65        <activity
+65-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:43:9-45:52
+66            android:name="com.salesforce.androidsdk.ui.ManageSpaceActivity"
+66-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:43:19-82
+67            android:excludeFromRecents="true"
+67-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:44:13-46
+68            android:theme="@style/SalesforceSDK" />
+68-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:45:13-49
+69
+70        <!-- Choose server activity -->
+71        <activity
+71-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:48:9-51:52
+72            android:name="com.salesforce.androidsdk.ui.ServerPickerActivity"
+72-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:48:19-83
+73            android:excludeFromRecents="true"
+73-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:49:13-46
+74            android:screenOrientation="portrait"
+74-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:51:13-49
+75            android:theme="@style/SalesforceSDK" />
+75-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:50:13-49
+76
+77        <!-- Account switcher activity -->
+78        <activity
+78-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:54:9-57:52
+79            android:name="com.salesforce.androidsdk.ui.AccountSwitcherActivity"
+79-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:54:19-86
+80            android:excludeFromRecents="true"
+80-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:55:13-46
+81            android:screenOrientation="portrait"
+81-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:57:13-49
+82            android:theme="@style/SalesforceSDK" />
+82-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:56:13-49
+83
+84        <!-- IDP webview activity -->
+85        <activity
+85-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:60:9-64:52
+86            android:name="com.salesforce.androidsdk.auth.idp.IDPCodeGeneratorActivity"
+86-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:60:19-93
+87            android:excludeFromRecents="true"
+87-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:61:13-46
+88            android:exported="false"
+88-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:63:13-37
+89            android:screenOrientation="portrait"
+89-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:64:13-49
+90            android:theme="@style/SalesforceSDK" />
+90-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:62:13-49
+91
+92        <!-- Dev info activity -->
+93        <activity
+93-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:67:9-69:40
+94            android:name="com.salesforce.androidsdk.ui.DevInfoActivity"
+94-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:67:19-78
+95            android:exported="false"
+95-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:69:13-37
+96            android:theme="@style/SalesforceSDK" />
+96-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:68:13-49
+97
+98        <!-- Receiver for IDP initiated login flow -->
+99        <receiver
+99-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:72:9-78:20
+100            android:name="com.salesforce.androidsdk.auth.idp.IDPInititatedLoginReceiver"
+100-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:72:19-95
+101            android:exported="true" >
+101-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:73:13-36
+102            <intent-filter>
+102-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:74:13-77:29
+103                <action android:name="com.salesforce.IDP_LOGIN_REQUEST" />
+103-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:75:17-75
+103-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:75:25-72
+104
+105                <category android:name="android.intent.category.DEFAULT" />
+105-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:76:17-76
+105-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:76:27-73
+106            </intent-filter>
+107        </receiver>
+108
+109        <service android:name="com.salesforce.androidsdk.push.SFDCFcmListenerService" >
+109-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:80:9-84:19
+109-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:80:18-86
+110            <intent-filter>
+110-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:81:13-83:29
+111                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+111-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:82:17-78
+111-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:82:25-75
+112            </intent-filter>
+113        </service>
+114        <service
+114-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:86:9-89:19
+115            android:name="com.salesforce.androidsdk.push.SFDCRegistrationIntentService"
+115-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:86:18-93
+116            android:exported="false"
+116-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:88:13-37
+117            android:permission="android.permission.BIND_JOB_SERVICE" >
+117-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:87:13-69
+118        </service>
+119
+120        <receiver
+120-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:91:9-92:40
+121            android:name="com.salesforce.androidsdk.push.PushService$SFDCRegistrationRetryAlarmReceiver"
+121-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:91:19-111
+122            android:exported="false" />
+122-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:92:13-37
+123
+124        <service
+124-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:94:9-96:40
+125            android:name="com.salesforce.androidsdk.push.PushService"
+125-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:94:18-75
+126            android:exported="false"
+126-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:96:13-37
+127            android:permission="android.permission.BIND_JOB_SERVICE" />
+127-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:95:13-69
+128        <service
+128-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:98:9-100:40
+129            android:name="com.salesforce.androidsdk.analytics.AnalyticsPublisherService"
+129-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:98:18-94
+130            android:exported="false"
+130-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:100:13-37
+131            android:permission="android.permission.BIND_JOB_SERVICE" />
+131-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:99:13-69
+132    </application>
+133
+134</manifest>

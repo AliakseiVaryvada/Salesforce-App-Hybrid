@@ -1,0 +1,221 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:3:1-115:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:3:1-115:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:3:1-115:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:3:1-115:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:3:1-115:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:3:1-115:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:3:1-115:12
+	package
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:4:2-37
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:6:2-29
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:3:11-69
+	android:versionCode
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:5:2-26
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+application
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:8:5-101:19
+meta-data#android.content.APP_RESTRICTIONS
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:11:9-12:56
+	android:resource
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:12:13-53
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:11:20-67
+service#com.salesforce.androidsdk.auth.AuthenticatorService
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:15:9-22:19
+	android:exported
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:15:18-41
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:16:13-79
+intent-filter#action:name:android.accounts.AccountAuthenticator
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:17:13-19:29
+action#android.accounts.AccountAuthenticator
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:18:17-80
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:18:25-77
+meta-data#android.accounts.AccountAuthenticator
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:20:13-21:57
+	android:resource
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:21:17-54
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:20:24-76
+activity#com.salesforce.androidsdk.ui.LoginActivity
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:30:9-33:52
+	android:screenOrientation
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:33:13-49
+	android:launchMode
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:32:13-48
+	android:theme
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:31:13-49
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:30:19-76
+activity#com.salesforce.androidsdk.ui.PasscodeActivity
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:36:9-40:61
+	android:screenOrientation
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:38:13-49
+	android:windowSoftInputMode
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:39:13-74
+	android:exported
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:37:13-37
+	android:theme
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:40:13-58
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:36:19-79
+activity#com.salesforce.androidsdk.ui.ManageSpaceActivity
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:43:9-45:52
+	android:excludeFromRecents
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:44:13-46
+	android:theme
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:45:13-49
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:43:19-82
+activity#com.salesforce.androidsdk.ui.ServerPickerActivity
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:48:9-51:52
+	android:screenOrientation
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:51:13-49
+	android:excludeFromRecents
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:49:13-46
+	android:theme
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:50:13-49
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:48:19-83
+activity#com.salesforce.androidsdk.ui.AccountSwitcherActivity
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:54:9-57:52
+	android:screenOrientation
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:57:13-49
+	android:excludeFromRecents
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:55:13-46
+	android:theme
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:56:13-49
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:54:19-86
+activity#com.salesforce.androidsdk.auth.idp.IDPCodeGeneratorActivity
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:60:9-64:52
+	android:screenOrientation
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:64:13-49
+	android:excludeFromRecents
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:61:13-46
+	android:exported
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:63:13-37
+	android:theme
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:62:13-49
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:60:19-93
+activity#com.salesforce.androidsdk.ui.DevInfoActivity
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:67:9-69:40
+	android:exported
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:69:13-37
+	android:theme
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:68:13-49
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:67:19-78
+receiver#com.salesforce.androidsdk.auth.idp.IDPInititatedLoginReceiver
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:72:9-78:20
+	android:exported
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:73:13-36
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:72:19-95
+intent-filter#action:name:com.salesforce.IDP_LOGIN_REQUEST+category:name:android.intent.category.DEFAULT
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:74:13-77:29
+action#com.salesforce.IDP_LOGIN_REQUEST
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:75:17-75
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:75:25-72
+category#android.intent.category.DEFAULT
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:76:17-76
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:76:27-73
+service#com.salesforce.androidsdk.push.SFDCFcmListenerService
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:80:9-84:19
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:80:18-86
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:81:13-83:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:82:17-78
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:82:25-75
+service#com.salesforce.androidsdk.push.SFDCRegistrationIntentService
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:86:9-89:19
+	android:exported
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:88:13-37
+	android:permission
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:87:13-69
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:86:18-93
+receiver#com.salesforce.androidsdk.push.PushService$SFDCRegistrationRetryAlarmReceiver
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:91:9-92:40
+	android:exported
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:92:13-37
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:91:19-111
+service#com.salesforce.androidsdk.push.PushService
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:94:9-96:40
+	android:exported
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:96:13-37
+	android:permission
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:95:13-69
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:94:18-75
+service#com.salesforce.androidsdk.analytics.AnalyticsPublisherService
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:98:9-100:40
+	android:exported
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:100:13-37
+	android:permission
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:99:13-69
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:98:18-94
+uses-permission#android.permission.AUTHENTICATE_ACCOUNTS
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:103:5-80
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:103:22-77
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:104:5-71
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:104:22-68
+uses-permission#android.permission.MANAGE_ACCOUNTS
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:105:5-74
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:105:22-71
+uses-permission#android.permission.USE_CREDENTIALS
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:106:5-74
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:106:22-71
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:107:5-81
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:107:22-78
+uses-permission#android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:108:5-88
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:108:22-85
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:111:5-74
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:111:22-71
+uses-permission#android.permission.USE_BIOMETRIC
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:114:5-72
+	android:name
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml:114:22-69
+uses-sdk
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/AndroidManifest.xml

@@ -1,0 +1,362 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.salesforce.androidsdk.salesforcehybrid.tests" >
+4
+5    <uses-sdk
+5-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:5:5-74
+6        android:minSdkVersion="23"
+6-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:5:15-41
+7        android:targetSdkVersion="29" />
+7-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:5:42-71
+8
+9    <instrumentation
+9-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:11:5-15:98
+10        android:name="androidx.test.runner.AndroidJUnitRunner"
+10-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:11:22-76
+11        android:functionalTest="false"
+11-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:14:22-52
+12        android:handleProfiling="false"
+12-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:13:22-53
+13        android:label="Tests for com.salesforce.androidsdk.salesforcehybrid.tests"
+13-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:15:22-96
+14        android:targetPackage="com.salesforce.androidsdk.salesforcehybrid.tests" />
+14-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:12:22-94
+15
+16    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+16-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-80
+16-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-77
+17    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+17-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-71
+17-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-68
+18    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+18-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-74
+18-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:22-71
+19    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+19-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-74
+19-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:22-71
+20    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+20-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-81
+20-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:22-78
+21    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" /> <!-- USE_FINGERPRINT is available from API 23 to API 27 and should be removed once minAPI > 27 -->
+21-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:5-88
+21-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:22-85
+22    <uses-permission android:name="android.permission.USE_FINGERPRINT" /> <!-- USE_BIOMETRIC is available on API 28 and higher -->
+22-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:5-74
+22-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:22-71
+23    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+23-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:5-72
+23-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:22-69
+24    <uses-permission android:name="android.permission.INTERNET" />
+24-->[:SalesforceAnalytics] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-67
+24-->[:SalesforceAnalytics] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-64
+25    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+25-->[:SalesforceAnalytics] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-79
+25-->[:SalesforceAnalytics] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-76
+26    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+26-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:24:5-68
+26-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:24:22-65
+27    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+27-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:26:5-82
+27-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:26:22-79
+28    <uses-permission android:name="android.permission.REORDER_TASKS" />
+28-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:24:5-72
+28-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:24:22-69
+29
+30    <application
+30-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:7:5-9:19
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.1.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/7f6c41cc2a14c0fbaa8d0166c17dc544/core-1.1.0/AndroidManifest.xml:24:18-86
+32        android:debuggable="true" >
+32-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:7:18-43
+33        <uses-library android:name="android.test.runner" />
+33-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:8:9-60
+33-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger11792359881742000261.xml:8:23-57
+34        <!-- SmartStore Inspector screen -->
+35        <activity
+35-->[:SmartStore] /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:9-17:52
+36            android:name="com.salesforce.androidsdk.smartstore.ui.SmartStoreInspectorActivity"
+36-->[:SmartStore] /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-95
+37            android:exported="false"
+37-->[:SmartStore] /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-37
+38            android:theme="@style/SalesforceSDK" /> <!-- Metadata for supported app restrictions -->
+38-->[:SmartStore] /home/aliaksei/AndroApps/hybrid/platforms/android/SmartStore/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-49
+39        <meta-data
+39-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:9-29:56
+40            android:name="android.content.APP_RESTRICTIONS"
+40-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:28:13-60
+41            android:resource="@xml/app_restrictions" /> <!-- Service required for authentication -->
+41-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-53
+42        <service
+42-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:32:9-42:19
+43            android:name="com.salesforce.androidsdk.auth.AuthenticatorService"
+43-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:33:13-79
+44            android:exported="true" >
+44-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:34:13-36
+45            <intent-filter>
+45-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:35:13-37:29
+46                <action android:name="android.accounts.AccountAuthenticator" />
+46-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:17-80
+46-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:25-77
+47            </intent-filter>
+48
+49            <meta-data
+49-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:39:13-41:57
+50                android:name="android.accounts.AccountAuthenticator"
+50-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:40:17-69
+51                android:resource="@xml/authenticator" />
+51-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:41:17-54
+52        </service> <!-- Login activity -->
+53        <!--
+54            Launch mode of "singleInstance" ensures that the activity isn't restarted
+55            by a callback from Chrome custom tab when auth flow is complete. This is
+56            required for the Chrome custom tab auth flow to work correctly.
+57        -->
+58        <activity
+58-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:50:9-54:52
+59            android:name="com.salesforce.androidsdk.ui.LoginActivity"
+59-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:51:13-70
+60            android:launchMode="singleInstance"
+60-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:52:13-48
+61            android:screenOrientation="portrait"
+61-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:53:13-49
+62            android:theme="@style/SalesforceSDK" /> <!-- Passcode activity -->
+62-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:54:13-49
+63        <activity
+63-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:57:9-62:77
+64            android:name="com.salesforce.androidsdk.ui.PasscodeActivity"
+64-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:58:13-73
+65            android:exported="false"
+65-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:59:13-37
+66            android:screenOrientation="portrait"
+66-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:60:13-49
+67            android:theme="@style/SalesforceSDK.Passcode"
+67-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:61:13-58
+68            android:windowSoftInputMode="adjustResize|stateAlwaysVisible" /> <!-- Manage space activity -->
+68-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:62:13-74
+69        <activity
+69-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:65:9-68:52
+70            android:name="com.salesforce.androidsdk.ui.ManageSpaceActivity"
+70-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:66:13-76
+71            android:excludeFromRecents="true"
+71-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:67:13-46
+72            android:theme="@style/SalesforceSDK" /> <!-- Choose server activity -->
+72-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:68:13-49
+73        <activity
+73-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:71:9-75:52
+74            android:name="com.salesforce.androidsdk.ui.ServerPickerActivity"
+74-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:72:13-77
+75            android:excludeFromRecents="true"
+75-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:73:13-46
+76            android:screenOrientation="portrait"
+76-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:74:13-49
+77            android:theme="@style/SalesforceSDK" /> <!-- Account switcher activity -->
+77-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:75:13-49
+78        <activity
+78-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:78:9-82:52
+79            android:name="com.salesforce.androidsdk.ui.AccountSwitcherActivity"
+79-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:79:13-80
+80            android:excludeFromRecents="true"
+80-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:80:13-46
+81            android:screenOrientation="portrait"
+81-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:81:13-49
+82            android:theme="@style/SalesforceSDK" /> <!-- IDP webview activity -->
+82-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:82:13-49
+83        <activity
+83-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:85:9-90:52
+84            android:name="com.salesforce.androidsdk.auth.idp.IDPCodeGeneratorActivity"
+84-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:86:13-87
+85            android:excludeFromRecents="true"
+85-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:87:13-46
+86            android:exported="false"
+86-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:88:13-37
+87            android:screenOrientation="portrait"
+87-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:89:13-49
+88            android:theme="@style/SalesforceSDK" /> <!-- Dev info activity -->
+88-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:90:13-49
+89        <activity
+89-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:93:9-96:52
+90            android:name="com.salesforce.androidsdk.ui.DevInfoActivity"
+90-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:94:13-72
+91            android:exported="false"
+91-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:95:13-37
+92            android:theme="@style/SalesforceSDK" /> <!-- Receiver for IDP initiated login flow -->
+92-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:96:13-49
+93        <receiver
+93-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:99:9-107:20
+94            android:name="com.salesforce.androidsdk.auth.idp.IDPInititatedLoginReceiver"
+94-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:100:13-89
+95            android:exported="true" >
+95-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:101:13-36
+96            <intent-filter>
+96-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:102:13-106:29
+97                <action android:name="com.salesforce.IDP_LOGIN_REQUEST" />
+97-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:103:17-75
+97-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:103:25-72
+98
+99                <category android:name="android.intent.category.DEFAULT" />
+99-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:105:17-76
+99-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:105:27-73
+100            </intent-filter>
+101        </receiver>
+102
+103        <service android:name="com.salesforce.androidsdk.push.SFDCFcmListenerService" >
+103-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:109:9-113:19
+103-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:109:18-86
+104            <intent-filter>
+104-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:110:13-112:29
+105                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+105-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:111:17-78
+105-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:111:25-75
+106            </intent-filter>
+107        </service>
+108        <service
+108-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:114:9-118:19
+109            android:name="com.salesforce.androidsdk.push.SFDCRegistrationIntentService"
+109-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:115:13-88
+110            android:exported="false"
+110-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:116:13-37
+111            android:permission="android.permission.BIND_JOB_SERVICE" >
+111-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:117:13-69
+112        </service>
+113
+114        <receiver
+114-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:120:9-122:40
+115            android:name="com.salesforce.androidsdk.push.PushService$SFDCRegistrationRetryAlarmReceiver"
+115-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:121:13-105
+116            android:exported="false" />
+116-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:122:13-37
+117
+118        <service
+118-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:124:9-127:72
+119            android:name="com.salesforce.androidsdk.push.PushService"
+119-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:125:13-70
+120            android:exported="false"
+120-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:126:13-37
+121            android:permission="android.permission.BIND_JOB_SERVICE" />
+121-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:127:13-69
+122        <service
+122-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:128:9-131:72
+123            android:name="com.salesforce.androidsdk.analytics.AnalyticsPublisherService"
+123-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:129:13-89
+124            android:exported="false"
+124-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:130:13-37
+125            android:permission="android.permission.BIND_JOB_SERVICE" />
+125-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:131:13-69
+126        <!--
+127             FirebaseMessagingService performs security checks at runtime,
+128             but set to not exported to explicitly avoid allowing another app to call it.
+129        -->
+130        <service
+130-->[com.google.firebase:firebase-messaging:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/95a63938c89fb841a5dd92a1844ca610/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:28:9-34:19
+131            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+131-->[com.google.firebase:firebase-messaging:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/95a63938c89fb841a5dd92a1844ca610/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:29:13-82
+132            android:exported="false" >
+132-->[com.google.firebase:firebase-messaging:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/95a63938c89fb841a5dd92a1844ca610/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:30:13-37
+133            <intent-filter android:priority="-500" >
+133-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:110:13-112:29
+134                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+134-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:111:17-78
+134-->[:SalesforceSDK] /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceSDK/build/intermediates/library_manifest/debug/AndroidManifest.xml:111:25-75
+135            </intent-filter>
+136        </service>
+137        <service
+137-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:29:9-35:19
+138            android:name="com.google.firebase.components.ComponentDiscoveryService"
+138-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:30:13-84
+139            android:directBootAware="true"
+139-->[com.google.firebase:firebase-common:19.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/cc6fccc44380da53d1c5f0448200394f/firebase-common-19.2.0/AndroidManifest.xml:15:13-43
+140            android:exported="false" >
+140-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:31:13-37
+141            <meta-data
+141-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:32:13-34:85
+142                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+142-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:33:17-96
+143                android:value="com.google.firebase.components.ComponentRegistrar" />
+143-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:34:17-82
+144        </service>
+145
+146        <receiver
+146-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:37:9-44:20
+147            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+147-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:38:13-78
+148            android:exported="true"
+148-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:39:13-36
+149            android:permission="com.google.android.c2dm.permission.SEND" >
+149-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:40:13-73
+150            <intent-filter>
+150-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:41:13-43:29
+151                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+151-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:42:17-81
+151-->[com.google.firebase:firebase-iid:20.0.1] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ed49461a99a2c8376f0de35db29a5eaf/firebase-iid-20.0.1/AndroidManifest.xml:42:25-78
+152            </intent-filter>
+153        </receiver>
+154
+155        <provider
+155-->[com.google.firebase:firebase-common:19.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/cc6fccc44380da53d1c5f0448200394f/firebase-common-19.2.0/AndroidManifest.xml:19:9-23:39
+156            android:name="com.google.firebase.provider.FirebaseInitProvider"
+156-->[com.google.firebase:firebase-common:19.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/cc6fccc44380da53d1c5f0448200394f/firebase-common-19.2.0/AndroidManifest.xml:20:13-77
+157            android:authorities="com.salesforce.androidsdk.salesforcehybrid.tests.firebaseinitprovider"
+157-->[com.google.firebase:firebase-common:19.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/cc6fccc44380da53d1c5f0448200394f/firebase-common-19.2.0/AndroidManifest.xml:21:13-72
+158            android:exported="false"
+158-->[com.google.firebase:firebase-common:19.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/cc6fccc44380da53d1c5f0448200394f/firebase-common-19.2.0/AndroidManifest.xml:22:13-37
+159            android:initOrder="100" />
+159-->[com.google.firebase:firebase-common:19.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/cc6fccc44380da53d1c5f0448200394f/firebase-common-19.2.0/AndroidManifest.xml:23:13-36
+160
+161        <activity
+161-->[com.google.android.gms:play-services-base:17.0.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/e91790921c910b5c0de2045e813ad59c/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+162            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+162-->[com.google.android.gms:play-services-base:17.0.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/e91790921c910b5c0de2045e813ad59c/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+163            android:exported="false"
+163-->[com.google.android.gms:play-services-base:17.0.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/e91790921c910b5c0de2045e813ad59c/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+164            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+164-->[com.google.android.gms:play-services-base:17.0.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/e91790921c910b5c0de2045e813ad59c/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+165
+166        <meta-data
+166-->[com.google.android.gms:play-services-basement:17.0.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/26cd93fdaab8138e01ee41f0b722d9da/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+167            android:name="com.google.android.gms.version"
+167-->[com.google.android.gms:play-services-basement:17.0.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/26cd93fdaab8138e01ee41f0b722d9da/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+168            android:value="@integer/google_play_services_version" />
+168-->[com.google.android.gms:play-services-basement:17.0.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/26cd93fdaab8138e01ee41f0b722d9da/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+169
+170        <activity
+170-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:27:9-33:20
+171            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+171-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:28:13-99
+172            android:theme="@android:style/Theme" >
+172-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:29:13-49
+173            <intent-filter>
+173-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:30:13-32:29
+174                <action android:name="android.intent.action.MAIN" />
+174-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:31:17-69
+174-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:31:25-66
+175            </intent-filter>
+176        </activity>
+177        <activity
+177-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:34:9-40:20
+178            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+178-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:35:13-95
+179            android:theme="@android:style/Theme" >
+179-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:36:13-49
+180            <intent-filter>
+180-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:30:13-32:29
+181                <action android:name="android.intent.action.MAIN" />
+181-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:31:17-69
+181-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:31:25-66
+182            </intent-filter>
+183        </activity>
+184        <activity
+184-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:41:9-47:20
+185            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+185-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:42:13-103
+186            android:theme="@android:style/Theme.Dialog" >
+186-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:43:13-56
+187            <intent-filter>
+187-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:30:13-32:29
+188                <action android:name="android.intent.action.MAIN" />
+188-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:31:17-69
+188-->[androidx.test:core:1.2.0] /home/aliaksei/.gradle/caches/transforms-2/files-2.1/ff25c04162ff943dff3292e200c3e8d4/core-1.2.0/AndroidManifest.xml:31:25-66
+189            </intent-filter>
+190        </activity>
+191    </application>
+192
+193</manifest>

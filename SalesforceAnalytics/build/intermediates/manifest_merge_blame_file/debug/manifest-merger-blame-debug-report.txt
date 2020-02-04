@@ -1,0 +1,23 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.salesforce.androidsdk.analytics"
+4    android:versionCode="67"
+5    android:versionName="8.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:8:2-64
+11-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:8:19-61
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:9:2-76
+12-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:9:19-73
+13
+14    <application />
+14-->/home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceAnalytics/AndroidManifest.xml:11:5-20
+15
+16</manifest>

@@ -1,0 +1,39 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:3:1-9:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:3:1-9:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:3:1-9:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:3:1-9:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:3:1-9:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:3:1-9:12
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:3:1-9:12
+	package
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:4:5-47
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:6:5-32
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:3:11-69
+	android:versionCode
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:5:5-29
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+application
+ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml:8:5-20
+uses-sdk
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+		ADDED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml
+		INJECTED from /home/aliaksei/AndroApps/hybrid/platforms/android/SalesforceHybrid/AndroidManifest.xml

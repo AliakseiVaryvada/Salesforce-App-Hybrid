@@ -1,0 +1,14 @@
+R_DEF: Internal format may change without notice
+local
+color record_account
+color record_campaign
+color record_case
+color record_contact
+color record_lead
+color record_opportunity
+color record_other
+color record_task
+raw globalsyncs
+raw usersyncs
+string app_name
+string app_package

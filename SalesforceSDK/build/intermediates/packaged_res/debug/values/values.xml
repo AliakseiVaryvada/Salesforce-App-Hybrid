@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="oauthScopes">
+        <item>api</item>
+        <item>web</item>
+    </string-array>
+    <color name="sf__accessibility_nav_color">#3e3e3c</color>
+    <color name="sf__background">#F5F6FA</color>
+    <color name="sf__background_dark">#080707</color>
+    <color name="sf__border_color">#D9DDE6</color>
+    <color name="sf__border_color_dark">#3e3e3c</color>
+    <color name="sf__hint_color">#42000000</color>
+    <color name="sf__hint_color_dark">#42D5B0B0</color>
+    <color name="sf__layout_background">#FFFFFF</color>
+    <color name="sf__layout_background_dark">#2b2826</color>
+    <color name="sf__layout_background_dark_status_bar">#000000</color>
+    <color name="sf__layout_background_status_bar">#cccccc</color>
+    <color name="sf__primary_color">#0070D2</color>
+    <color name="sf__primary_color_dark">#0046a0</color>
+    <color name="sf__secondary_color">#FFFF</color>
+    <color name="sf__secondary_color_dark">#FFFF</color>
+    <color name="sf__text_color">#16325C</color>
+    <color name="sf__text_color_dark">#f0f0f0</color>
+    <dimen name="sf__button_margin">2dp</dimen>
+    <dimen name="sf__custom_url_layout_padding">0dp</dimen>
+    <dimen name="sf__custom_url_margin_top">7dp</dimen>
+    <dimen name="sf__list_divider_height">12dp</dimen>
+    <dimen name="sf__list_item_add_icon_length">16dp</dimen>
+    <dimen name="sf__list_item_add_icon_padding_horizontal">22dp</dimen>
+    <dimen name="sf__list_item_add_icon_padding_top">17dp</dimen>
+    <dimen name="sf__list_item_height">73dp</dimen>
+    <dimen name="sf__list_item_new_user_margin_vertical">12dp</dimen>
+    <dimen name="sf__list_item_server_name_height">17dp</dimen>
+    <dimen name="sf__list_item_server_name_line_spacing">1sp</dimen>
+    <dimen name="sf__list_item_server_name_text_size">14sp</dimen>
+    <dimen name="sf__list_item_user_icon_length">48.3dp</dimen>
+    <dimen name="sf__list_item_user_icon_padding_end">12.7dp</dimen>
+    <dimen name="sf__list_item_user_icon_padding_start">12dp</dimen>
+    <dimen name="sf__list_item_user_name_height">20dp</dimen>
+    <dimen name="sf__list_item_user_name_line_spacing">4sp</dimen>
+    <dimen name="sf__list_item_user_name_margin_bottom">3dp</dimen>
+    <dimen name="sf__list_item_user_name_margin_top">16dp</dimen>
+    <dimen name="sf__list_item_user_name_text_size">16sp</dimen>
+    <dimen name="sf__passcode_error_margin_top">21dp</dimen>
+    <dimen name="sf__passcode_forgot_margin_top">21dp</dimen>
+    <dimen name="sf__passcode_instr_margin_left">20dp</dimen>
+    <dimen name="sf__passcode_instr_margin_right">20dp</dimen>
+    <dimen name="sf__passcode_instr_margin_top">10dp</dimen>
+    <dimen name="sf__passcode_layout_height">50dp</dimen>
+    <dimen name="sf__passcode_layout_margin_top">100dp</dimen>
+    <dimen name="sf__passcode_layout_padding">0dp</dimen>
+    <dimen name="sf__passcode_layout_width">300dp</dimen>
+    <dimen name="sf__passcode_text_min_width">160dp</dimen>
+    <dimen name="sf__passcode_title_margin_bottom">10dp</dimen>
+    <dimen name="sf__passcode_title_margin_top">10dp</dimen>
+    <dimen name="sf__server_layout_padding">0dp</dimen>
+    <dimen name="sf__server_picker_margin_bottom">3dp</dimen>
+    <dimen name="sf__server_picker_margin_left">3dp</dimen>
+    <dimen name="sf__server_picker_margin_right">3dp</dimen>
+    <dimen name="sf__server_picker_margin_top">7dp</dimen>
+    <dimen name="sf__sf_logo_padding_vertical">16dp</dimen>
+    <dimen name="sf__title_bar_height">48dp</dimen>
+    <dimen name="sf__title_bar_padding_bottom">13dp</dimen>
+    <dimen name="sf__title_bar_padding_left">12dp</dimen>
+    <dimen name="sf__title_bar_padding_top">14dp</dimen>
+    <dimen name="sf__title_text_size">16sp</dimen>
+    <string name="account_type">com.salesforce.androidsdk</string>
+    <string name="androidPushNotificationClientId"/>
+    <string name="api_version">v46.0</string>
+    <string name="app_name">SalesforceSDK</string>
+    <string name="app_package">com.salesforce.androidsdk</string>
+    <string name="oauthRedirectURI">testsfdc:///mobilesdk/detect/oauth/done</string>
+    <string name="oauth_display_type">touch</string>
+    <string name="remoteAccessConsumerKey">3MVG9Iu66FKeHhINkB1l7xt7kR8czFcCTUhgoA8Ol2Ltf1eYHOU4SqQRSEitYFDUpqRWcoQ2.dBv_a1Dyu5xa</string>
+    <string name="sf__access_token_revoked">Your access token has been revoked by the administrator. You will now be logged out.</string>
+    <string name="sf__accessibility_logged_out_announcement">You are logged out.</string>
+    <string name="sf__accessibility_passcode_field_label">Passcode field</string>
+    <string name="sf__accessibility_passcode_length_hint">Passcode is %d alphanumeric characters long.</string>
+    <string name="sf__accessibility_unlock_announcement">Passcode confirmed.</string>
+    <string name="sf__account_selector_text">Select an account to use</string>
+    <string name="sf__add_new_account">Add new account</string>
+    <string name="sf__app_service_host_labels_description">Used to specify login host labels for the application.</string>
+    <string name="sf__app_service_hosts_description">Used to specify login hosts for the application.</string>
+    <string name="sf__auth_login_production">Production</string>
+    <string name="sf__auth_login_sandbox">Sandbox</string>
+    <string name="sf__biometric_allow_instructions">You can now unlock %s using biometric for extra security and convenience.</string>
+    <string name="sf__biometric_cancel">Cancel</string>
+    <string name="sf__biometric_enable_button">Enable</string>
+    <string name="sf__biometric_face_allow_instructions_title">Set up Face Unlock</string>
+    <string name="sf__biometric_face_title">Face Unlock</string>
+    <string name="sf__biometric_fingerprint_allow_instructions_title">Set up Fingerprint Unlock</string>
+    <string name="sf__biometric_fingerprint_title">Fingerprint Unlock</string>
+    <string name="sf__biometric_iris_allow_instructions_title">Set up Iris Scanner Unlock</string>
+    <string name="sf__biometric_iris_title">Iris Scanner Unlock</string>
+    <string name="sf__biometric_not_now_button">Not Now</string>
+    <string name="sf__biometric_success">Success</string>
+    <string name="sf__clear_cookies">Clear Cookies</string>
+    <string name="sf__custom_url_button">Add Connection</string>
+    <string name="sf__dev_support_title">Mobile SDK Dev Support</string>
+    <string name="sf__face_unlock_description">Use Face Unlock to access your %s account.</string>
+    <string name="sf__face_unlock_failed">Face Unlock failed</string>
+    <string name="sf__face_unlock_title">Face Unlock</string>
+    <string name="sf__fingerprint_description">Unlock using your fingerprint to access your %s account.</string>
+    <string name="sf__fingerprint_failed">Fingerprint authentication failed</string>
+    <string name="sf__fingerprint_hint">Touch sensor</string>
+    <string name="sf__fingerprint_title">Fingerprint Unlock</string>
+    <string name="sf__generic_authentication_error">Authentication error. Please try again.</string>
+    <string name="sf__generic_authentication_error_title">Error</string>
+    <string name="sf__generic_error">An error has occurred %s\nPlease try again</string>
+    <string name="sf__idp_app_url_scheme_description">Used to specify IDP app\'s URL scheme to be used.</string>
+    <string name="sf__invalid_server_url">Please type in a valid URL</string>
+    <string name="sf__iris_description">Use the Iris Scanner to access your %s account.</string>
+    <string name="sf__iris_failed">Iris authentication failed</string>
+    <string name="sf__iris_title">Iris Scanner Unlock</string>
+    <string name="sf__jwt_authentication_error">JWT authentication error. Please try again.</string>
+    <string name="sf__launch_idp">Launch IDP App</string>
+    <string name="sf__login_title">Login</string>
+    <string name="sf__manage_space_confirmation">Clearing user data will log the current user out. Are you sure you want to perform this action?</string>
+    <string name="sf__manage_space_logout_no">No</string>
+    <string name="sf__manage_space_logout_yes">Yes</string>
+    <string name="sf__managed_app_callback_url_description">Used to specify OAuth callback URL for the application.</string>
+    <string name="sf__managed_app_cert_alias_description">Used to specify the certificate alias required for the application.</string>
+    <string name="sf__managed_app_error">Authentication only allowed from managed device.</string>
+    <string name="sf__managed_app_oauth_id_description">Used to specify OAuth consumer key for the application.</string>
+    <string name="sf__only_show_authorized_hosts_description">Used to specify that only authorized hosts can be shown.</string>
+    <string name="sf__passcode_change_instructions">Create a passcode</string>
+    <string name="sf__passcode_change_title">Passcode</string>
+    <string name="sf__passcode_confirm_instructions">Verify passcode</string>
+    <string name="sf__passcode_confirm_title">Passcode</string>
+    <string name="sf__passcode_create_instructions">Create a passcode</string>
+    <string name="sf__passcode_create_title">Passcode</string>
+    <string name="sf__passcode_enter_instructions">Enter passcode</string>
+    <string name="sf__passcode_enter_title">Passcode</string>
+    <string name="sf__passcode_face_icon_description">Face Unlock icon</string>
+    <string name="sf__passcode_final">Final passcode attempt.</string>
+    <string name="sf__passcode_fingerprint_icon_description">Fingerprint icon</string>
+    <string name="sf__passcode_logout">Log out</string>
+    <string name="sf__passcode_try_again">Incorrect passcode. %d attempts remaining.</string>
+    <string name="sf__passcode_verify_button">Verify Passcode</string>
+    <string name="sf__passcodes_dont_match">Passcodes do not match. Try again.</string>
+    <string name="sf__pick_server">Change Server</string>
+    <string name="sf__reload">Reload</string>
+    <string name="sf__require_cert_auth_description">Used to specify if certificate based authentication is required for the application.</string>
+    <string name="sf__server_url_add_title">Add Connection</string>
+    <string name="sf__server_url_default_apply">Apply</string>
+    <string name="sf__server_url_default_cancel">Cancel</string>
+    <string name="sf__server_url_default_custom_label">Name</string>
+    <string name="sf__server_url_default_custom_url">URL</string>
+    <string name="sf__server_url_reset">Reset</string>
+    <string name="sf__ssl_error">SSL error: %s.</string>
+    <string name="sf__ssl_expired">Expired certificate</string>
+    <string name="sf__ssl_id_mismatch">Hostname mismatch</string>
+    <string name="sf__ssl_not_yet_valid">Certificate not yet valid</string>
+    <string name="sf__ssl_unknown_error">Unknown error</string>
+    <string name="sf__ssl_untrusted">Untrusted certificate authority</string>
+    <style name="SalesforceSDK">
+        <item name="android:actionBarStyle">@style/SalesforceSDKActionBar</item>
+        <item name="android:colorPrimary">@color/sf__primary_color</item>
+        <item name="android:colorPrimaryDark">@color/sf__primary_color</item>
+        <item name="sfColorSecondary">@color/sf__secondary_color</item>
+        <item name="sfLayoutBackground">@color/sf__layout_background</item>
+        <item name="android:colorBackground">@color/sf__background</item>
+        <item name="sfBorderColor">@color/sf__border_color</item>
+        <item name="android:textColor">@color/sf__text_color</item>
+        <item name="android:textColorPrimary">@color/sf__text_color</item>
+        <item name="android:textColorHint">@color/sf__hint_color</item>
+        <item name="android:itemBackground">@color/sf__background</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:navigationBarColor">@color/sf__background</item>
+        <item name="sfNegativeButtonTextColor">@color/sf__primary_color</item>
+        <item name="sfNegativeButtonBorderColor">@color/sf__border_color</item>
+    </style>
+    <style name="SalesforceSDK.AccessibleNav">
+        <item name="android:navigationBarColor">@color/sf__accessibility_nav_color</item>
+    </style>
+    <style name="SalesforceSDK.Dialog" parent="@android:style/Theme.Material.Light.Dialog">
+        <item name="android:textColor">@color/sf__text_color</item>
+        <item name="android:textColorHint">@color/sf__hint_color</item>
+        <item name="android:colorBackground">@color/sf__layout_background</item>
+        <item name="android:colorPrimary">@color/sf__primary_color</item>
+    </style>
+    <style name="SalesforceSDK.Dialog.Dark">
+        <item name="android:textColor">@color/sf__text_color_dark</item>
+        <item name="android:textColorHint">@color/sf__hint_color_dark</item>
+        <item name="android:colorBackground">@color/sf__layout_background_dark</item>
+        <item name="android:colorPrimary">@color/sf__primary_color</item>
+    </style>
+    <style name="SalesforceSDK.Passcode" parent="@style/Theme.Design.NoActionBar">
+        <item name="sfBorderColor">@color/sf__border_color</item>
+        <item name="android:colorPrimary">@color/sf__primary_color</item>
+        <item name="sfColorSecondary">@color/sf__secondary_color</item>
+        <item name="sfLayoutBackground">@color/sf__layout_background</item>
+        <item name="android:colorBackground">@color/sf__background</item>
+        <item name="android:textColor">@color/sf__text_color</item>
+        <item name="android:textColorPrimary">@color/sf__text_color</item>
+        <item name="android:colorPrimaryDark">@color/sf__layout_background</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/sf__background</item>
+        <item name="sfFingerprintIcon">@drawable/sf__fingerprint_icon</item>
+        <item name="sfFaceUnlockIcon">@drawable/sf__face_unlock_icon</item>
+        <item name="sfNegativeButtonTextColor">@color/sf__primary_color</item>
+        <item name="sfNegativeButtonBorderColor">@color/sf__border_color</item>
+    </style>
+    <style name="SalesforceSDK.Passcode.Box">
+        <item name="android:padding">@dimen/sf__passcode_layout_padding</item>
+        <item name="android:layout_width">@dimen/sf__passcode_layout_width</item>
+        <item name="android:layout_height">@dimen/sf__passcode_layout_height</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/sf__passcode_layout_margin_top</item>
+    </style>
+    <style name="SalesforceSDK.Passcode.Dark">
+        <item name="sfBorderColor">@color/sf__border_color_dark</item>
+        <item name="sfColorSecondary">@color/sf__secondary_color_dark</item>
+        <item name="sfLayoutBackground">@color/sf__layout_background_dark</item>
+        <item name="android:colorBackground">@color/sf__background_dark</item>
+        <item name="android:textColor">@color/sf__text_color_dark</item>
+        <item name="android:textColorPrimary">@color/sf__text_color_dark</item>
+        <item name="android:colorPrimaryDark">@color/sf__layout_background_dark</item>
+        <item name="android:navigationBarColor">@color/sf__background_dark</item>
+        <item name="sfFingerprintIcon">@drawable/sf__fingerprint_icon_dark</item>
+        <item name="sfFaceUnlockIcon">@drawable/sf__face_unlock_icon_dark</item>
+        <item name="sfNegativeButtonTextColor">@color/sf__secondary_color_dark</item>
+        <item name="sfNegativeButtonBorderColor">@color/sf__secondary_color_dark</item>
+    </style>
+    <style name="SalesforceSDK.Passcode.Text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="SalesforceSDK.Passcode.Text.Instructions">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/sf__passcode_instr_margin_top</item>
+        <item name="android:layout_marginLeft">@dimen/sf__passcode_instr_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/sf__passcode_instr_margin_right</item>
+    </style>
+    <style name="SalesforceSDK.Passcode.Text.Title">
+        <item name="android:layout_marginTop">@dimen/sf__passcode_title_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/sf__passcode_title_margin_bottom</item>
+    </style>
+    <style name="SalesforceSDKActionBar" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:background">@color/sf__primary_color</item>
+        <item name="android:textColor">@color/sf__text_color</item>
+    </style>
+    <style name="SalesforceSDKActionBar_Dark" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:background">@color/sf__primary_color</item>
+        <item name="android:textColor">@color/sf__text_color_dark</item>
+    </style>
+    <style name="SalesforceSDK_Dark">
+        <item name="android:actionBarStyle">@style/SalesforceSDKActionBar_Dark</item>
+        <item name="android:colorPrimary">@color/sf__primary_color</item>
+        <item name="android:colorPrimaryDark">@color/sf__primary_color</item>
+        <item name="sfColorSecondary">@color/sf__secondary_color_dark</item>
+        <item name="sfLayoutBackground">@color/sf__layout_background_dark</item>
+        <item name="android:colorBackground">@color/sf__background_dark</item>
+        <item name="sfBorderColor">@color/sf__border_color_dark</item>
+        <item name="android:textColor">@color/sf__text_color_dark</item>
+        <item name="android:textColorPrimary">@color/sf__text_color_dark</item>
+        <item name="android:textColorHint">@color/sf__hint_color_dark</item>
+        <item name="android:itemBackground">@color/sf__background_dark</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:navigationBarColor">@color/sf__background_dark</item>
+        <item name="sfNegativeButtonTextColor">@color/sf__secondary_color_dark</item>
+        <item name="sfNegativeButtonBorderColor">@color/sf__secondary_color_dark</item>
+    </style>
+    <style name="SalesforceSDK_Dark.Login">
+        <item name="android:navigationBarColor">@color/sf__background</item>
+    </style>
+    <style name="SalesforceSDK_RadialButtonTitle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/sf__text_color</item>
+        <item name="android:buttonTint">@color/sf__hint_color</item>
+    </style>
+    <style name="SalesforceSDK_RadialButtonTitle_Dark" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/sf__text_color_dark</item>
+        <item name="android:buttonTint">@color/sf__hint_color_dark</item>
+    </style>
+    <style name="SalesforceSDK_RadialButtonUrl" parent="@style/TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/sf__hint_color</item>
+        <item name="android:buttonTint">@color/sf__hint_color</item>
+    </style>
+    <style name="SalesforceSDK_RadialButtonUrl_Dark" parent="@style/TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/sf__hint_color_dark</item>
+        <item name="android:buttonTint">@color/sf__hint_color_dark</item>
+    </style>
+    <declare-styleable name="PasscodeAttributes">
+        <attr format="color" name="sfLayoutBackground"/>
+        <attr format="color" name="sfColorSecondary"/>
+        <attr format="color" name="sfNegativeButtonTextColor"/>
+        <attr format="color" name="sfNegativeButtonBorderColor"/>
+        <attr format="color" name="sfBorderColor"/>
+        <attr format="integer" name="sfFingerprintIcon"/>
+        <attr format="integer" name="sfFaceUnlockIcon"/>
+    </declare-styleable>
+</resources>

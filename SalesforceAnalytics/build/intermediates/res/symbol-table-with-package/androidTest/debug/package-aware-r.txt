@@ -1,0 +1,3 @@
+com.salesforce.androidsdk.analytics.tests
+string app_name
+string app_package
