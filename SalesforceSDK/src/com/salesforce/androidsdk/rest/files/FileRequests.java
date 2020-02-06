@@ -45,7 +45,7 @@ import okhttp3.RequestBody;
 
 /**
  * This defines the HTTP requests in the connect API for files functionality.
- * 
+ *
  * @author sfell
  */
 public class FileRequests extends ApiRequests {
@@ -56,8 +56,8 @@ public class FileRequests extends ApiRequests {
 
     /**
      * Build a Request that can fetch a page from the files owned by the specified user.
-     * 
-     * @param userId If null the context user is used, otherwise it should be an Id of a user.
+     *
+     * @param userId  If null the context user is used, otherwise it should be an Id of a user.
      * @param pageNum If null fetches the first page, otherwise fetches the specified page.
      * @return A new RestRequest that can be used to fetch this data.
      */
@@ -68,8 +68,8 @@ public class FileRequests extends ApiRequests {
     /**
      * Build a Request that can fetch a page from the list of files from groups
      * that the user is a member of.
-     * 
-     * @param userId If null the context user is used, otherwise it should be an Id of a user.
+     *
+     * @param userId  If null the context user is used, otherwise it should be an Id of a user.
      * @param pageNum If null fetches the first page, otherwise fetches the specified page.
      * @return A new RestRequest that can be used to fetch this data.
      */
@@ -80,8 +80,8 @@ public class FileRequests extends ApiRequests {
     /**
      * Build a Request that can fetch a page from the list of files that have
      * been shared with the user.
-     * 
-     * @param userId If null the context user is used, otherwise it should be an Id of a user.
+     *
+     * @param userId  If null the context user is used, otherwise it should be an Id of a user.
      * @param pageNum If null fetches the first page, otherwise fetches the specified page.
      * @return A new RestRequest that can be used to fetch this data.
      */
@@ -92,8 +92,8 @@ public class FileRequests extends ApiRequests {
     /**
      * Build a Request that can fetch the file details of a particular version
      * of a file.
-     * 
-     * @param sfdcId The Id of the file.
+     *
+     * @param sfdcId  The Id of the file.
      * @param version If null fetches the most recent version, otherwise fetches this specific version.
      * @return A new RestRequest that can be used to fetch this data.
      */
@@ -105,7 +105,7 @@ public class FileRequests extends ApiRequests {
     /**
      * Build a request that can fetch the latest file details of one or more
      * files in a single request.
-     * 
+     *
      * @param sfdcIds The list of file Ids to fetch.
      * @return A new RestRequest that can be used to fetch this data.
      */
@@ -118,11 +118,11 @@ public class FileRequests extends ApiRequests {
     /**
      * Build a Request that can fetch the a preview/rendition of a particular
      * page of the file (and version).
-     * 
-     * @param sfdcId The Id of the file.
-     * @param version If null fetches the most recent version, otherwise fetches this specific version.
+     *
+     * @param sfdcId        The Id of the file.
+     * @param version       If null fetches the most recent version, otherwise fetches this specific version.
      * @param renditionType What format of rendition do you want to get.
-     * @param pageNum Which page to fetch, pages start at 0.
+     * @param pageNum       Which page to fetch, pages start at 0.
      * @return A new RestRequest that can be used to fetch this data.
      */
     public static RestRequest fileRendition(String sfdcId, String version, RenditionType renditionType, Integer pageNum) {
@@ -137,8 +137,8 @@ public class FileRequests extends ApiRequests {
     /**
      * Builds a request that can fetch the actual binary file contents of this
      * particular file.
-     * 
-     * @param sfdcId The Id of the file.
+     *
+     * @param sfdcId  The Id of the file.
      * @param version The version of the file.
      * @return A new RestRequest that can be used to fetch this data.
      */
@@ -150,8 +150,8 @@ public class FileRequests extends ApiRequests {
     /**
      * Build a Request that can fetch a page from the list of entities that this
      * file is shared to.
-     * 
-     * @param sfdcId The Id of the file.
+     *
+     * @param sfdcId  The Id of the file.
      * @param pageNum If null fetches the first page, otherwise fetches the specified page.
      * @return A new RestRequest that can be used to fetch this data.
      */
@@ -163,9 +163,9 @@ public class FileRequests extends ApiRequests {
     /**
      * Build a request that will add a file share for the specified fileId to
      * the specified entityId.
-     * 
-     * @param fileId The Id of the file being shared.
-     * @param entityId The Id of the entity to share the file to (e.g. a user or a group).
+     *
+     * @param fileId    The Id of the file being shared.
+     * @param entityId  The Id of the entity to share the file to (e.g. a user or a group).
      * @param shareType The type of share (V - View, C - Collaboration).
      * @return A new RestRequest that be used to create this share.
      */
@@ -176,7 +176,7 @@ public class FileRequests extends ApiRequests {
 
     /**
      * Build a request that will delete the specified file share.
-     * 
+     *
      * @param shareId The Id of the file share record (aka ContentDocumentLink).
      * @return A new RestRequest that be used to create this share.
      */
@@ -189,11 +189,11 @@ public class FileRequests extends ApiRequests {
      * Build a request that can upload a new file to the server, this will
      * create a new file at version 1.
      *
-     * @param theFile The path of the local file to upload to the server.
-     * @param name The name of this file.
-     * @param title The title of this file.
+     * @param theFile     The path of the local file to upload to the server.
+     * @param name        The name of this file.
+     * @param title       The title of this file.
      * @param description A description of the file.
-     * @param mimeType The mime-type of the file, if known.
+     * @param mimeType    The mime-type of the file, if known.
      * @return A RestRequest that can perform this upload.
      */
     public static RestRequest uploadFile(File theFile, String name, String title, String description, String mimeType) {
@@ -213,3 +213,5 @@ public class FileRequests extends ApiRequests {
         return RequestBody.create(RestRequest.MEDIA_TYPE_JSON, new JSONObject(share).toString());
     }
 }
+
+

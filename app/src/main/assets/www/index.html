@@ -32,15 +32,39 @@
 		function openCamera(){
 
 			navigator.camera.getPicture(
-				function successUpdate() {
+
+				 function successUpdate(imageURI) {
 					alert('Success');
+					var image = document.getElementById('photo-tag');
+					image.src = 'data:image/jpeg;base64'+ imageURI;
+
+					let xhr = new XMLHttpRequest();
+					alert('request');
+					console.log(imageURI);
+					 xhr.onloadend = function() {
+						 if (xhr.status == 200) {
+							 console.log("Успех");
+						 } else {
+							 console.log("Ошибка " + this.status);
+							 console.log("Ошибка " + this.readyState);
+						 }
+					 };
+					 xhr.open("POST", "/services/data/v47.0/connect/user-profiles/me/photo");
+					 xhr.send(imageURI);
+
 				},
 				function errorUpdate(error) {
 					alert('errorUpdate' + error);
+				},
+				{
+					quality:50,
+					destinationType: Camera.DestinationType.DATA_URL
 				}
 			);
 
 		}
+
+
 
 		/* This method will render a list of contacts from current salesforce org */
 		function showUser(creds) {
@@ -48,6 +72,7 @@
 				userId = creds.userId;
 				var users = data.records;
 				console.log('Success SOQL');
+				console.log(creds.userId);
 				console.log(users[0].MediumPhotoUrl);
 				var name = users[0].Name;
 				var mediumImg = users[0].SmallBannerPhotoUrl;
@@ -63,7 +88,8 @@
 
 
 				document.getElementById('photo').innerHTML =
-					'<img class="avatar" src = "https://na174.lightning.force.com/' + users[0].MediumPhotoUrl +
+					'<img class="avatar" id ="photo-tag" src = "https://na174.lightning.force.com/' +
+					users[0].MediumPhotoUrl +
 					'?oauth_token=' +
 					creds.accessToken + ' ">';
 
@@ -103,8 +129,12 @@
 				alert('Failed to fetch contacts: ' + error);
 			});
 		};
+
+
 		var userId;
 		var editId;
+
+
 		function editFieldGetId(object) {
 			editId = object.id;
 			document.getElementById('value').placeholder = object.id;
@@ -118,6 +148,8 @@
 			}
 			toggleModal();
 		}
+
+
 
 		function saveFieldAfterEdit() {
 			var inputText = document.getElementById('value').value;
@@ -145,19 +177,47 @@
 				alert('Please, fill input field.');
 			}
 		}
-
+		//
 		// function savePhoto() {
 		// 	force.chatter(
-		// 		setPhoto(communityId, userId, fileUpload)
 		//
+		// // 		POST /services/data/v46.0/chatter/users/me/photo HTTP/1.1
+		// // 	Authorization: OAuth
+		// 	00DD0000000Jhd2!AQIAQC.lh4qTQcBhOPm4TZom5IaOOZLVPVK4wI_rPYJvmE8r2VW8XA.
+		// 		OZ7S29JEM_7Ctq1lst2dzoV.owisJc0KacUbDxyae
+		// 	User-Agent: Jakarta Commons-HttpClient/3.0.1
+		// 	Host: instance_name
+		// 	Content-Length: 543
+		// 	Content-Type: multipart/form-data; boundary=a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq
+		// 	Accept: application/json
+		// 	--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq
+		// 	Content-Type: application/json; charset=UTF-8
+		// 	Content-Disposition: form-data; name="json"
+		// 	{
+		// 		"cropX" : "0",
+		// 		"cropY" : "0",
+		// 		"cropSize" : "200"
+		// 	}
+		// 	--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq
+		// 	Content-Disposition: form-data; name="fileUpload"; filename="myPhoto.jpg"
+		// 	Content-Type: application/octet-stream; charset=ISO-8859-1
+		// ...contents of myPhoto.jpg...
+		// 	--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq--,
+		//
+
+
 		// 		function successUpdate() {
 		// 			alert('Success');
 		// 		},
+		//
 		// 		function errorUpdate(error) {
+		//
+		// 				+'/following?page=1');
 		// 			alert('errorUpdate' + error);
 		// 		}
-		// 	);
+		// );
 		// }
+
 
 
 	</script>
@@ -221,6 +281,8 @@
 		.avatar {
 			border-radius: 100px;
 			border: 5px solid rgba(16, 74, 255, 0.49);
+			width: 200px;
+			height: 200px;
 		}
 
 
@@ -316,6 +378,10 @@
 <br>
 <button onclick="openCamera()">
 	makePhoto
+</button>
+
+<button onclick="savePhoto()">
+	savePhoto
 </button>
 <table id="myTable">
 	<thead>
