@@ -20,6 +20,10 @@
 
 	<script>
 
+		var authToken;
+		var userId;
+		var editId;
+
 		/* Do login */
 		force.login(
 			function () {
@@ -29,41 +33,127 @@
 				console.log('Auth failed: ' + error);
 			}
 		);
-		function openCamera(){
+		// function openCamera(){
+		//
+		// 	navigator.camera.getPicture(
+		//
+		// 		 function successUpdate(imageURI) {
+		// 			alert('Success');
+		// 			var image = document.getElementById('photo-tag');
+		// 			image.src = imageURI;
+		//
+		// 			// let xhr = new XMLHttpRequest();
+		// 			// alert('request');
+		// 			// console.log(imageURI);
+		// 			//  xhr.onloadend = function() {
+		// 			// 	 if (xhr.status == 200) {
+		// 			// 		 console.log("Успех");
+		// 			// 	 } else {
+		// 			// 		 console.log("Ошибка " + this.status);
+		// 			// 		 console.log("Ошибка " + this.readyState);
+		// 			// 	 }
+		// 			//  };
+		// 			//  xhr.open("POST", "/services/data/v47.0/connect/user-profiles/me/photo");
+		// 			//  xhr.send(imageURI);
+		//
+		// 		},
+		// 		function errorUpdate(error) {
+		// 			alert('errorUpdate' + error);
+		// 		},
+		// 		// {
+		// 		// 	quality: 50,
+		// 		// 	destinationType: Camera.DestinationType.DATA_URL
+		// 		// }
+		// 	);
+		// }
 
-			navigator.camera.getPicture(
+		function openCamera() {
+			navigator.camera.getPicture(onSuccess, onFail,{
+				quality: 25,
+				destinationType: Camera.DestinationType.DATA_URL
+			});
 
-				 function successUpdate(imageURI) {
-					alert('Success');
-					var image = document.getElementById('photo-tag');
-					image.src = 'data:image/jpeg;base64'+ imageURI;
+			function onSuccess(imageData) {
+				alert('Success');
+				var image = document.getElementById('photo-tag');
+				image.src = 'data:image/jpeg;base64,' + imageData;
+				var urlPhotoFolder = 'https://aliaksei-varyvada-dev-ed.lightning.force.com/services/data/v47.0/connect/user-profiles/me/photo';
 
-					let xhr = new XMLHttpRequest();
-					alert('request');
-					console.log(imageURI);
-					 xhr.onloadend = function() {
-						 if (xhr.status == 200) {
-							 console.log("Успех");
-						 } else {
-							 console.log("Ошибка " + this.status);
-							 console.log("Ошибка " + this.readyState);
-						 }
-					 };
-					 xhr.open("POST", "/services/data/v47.0/connect/user-profiles/me/photo");
-					 xhr.send(imageURI);
+				var base64Image = 'data:image/jpeg;base64,' + imageData;
+				var binaryImage = dataURItoBlob(base64Image);
 
-				},
-				function errorUpdate(error) {
-					alert('errorUpdate' + error);
-				},
-				{
-					quality:50,
-					destinationType: Camera.DestinationType.DATA_URL
-				}
-			);
 
+				// var requestBody = 'POST '+urlPhotoFolder+'\n' +
+				// 	'\nAuthorization: OAuth ' + authToken + 'User-Agent: Jakarta Commons-HttpClient/3.0.1\n'+
+				// 	'Host: https://aliaksei-varyvada-dev-ed.lightning.force.com/' +
+				// 	'\nContent-Length: '+ base64Image.size+
+				// 	'\nContent-Type: multipart/form-data; boundary=a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq\n'+
+				// 	'Accept: application/json\n\n' +
+				// 	'--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq\n' +
+				// 	'Content-Type: application/json; charset=UTF-8\n' +
+				// 	'Content-Disposition: form-data; name="json"\n\n' +
+				// 	'{\n' +
+				// 	'"cropX" : "0",\n' +
+				// 	'"cropY" : "0",\n' +
+				// 	'"cropSize" : "200"\n' +
+				// 	'}\n' +
+				// 	'--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq\n'+
+				// 	'Content-Disposition: form-data; name="fileUpload"; filename="avatar.jpg"\n' +
+				// 	'Content-Type: application/octet-stream; charset=ISO-8859-1\n' +
+				// 	'\n'+ imageData +'\n--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq--';
+
+				// let formData = new FormData(document.forms.person);
+
+				let xhr = new XMLHttpRequest();
+				xhr.open('POST', urlPhotoFolder);
+				// xhr.setRequestHeader('Authorization', authToken);
+				// xhr.setRequestHeader('User-Agent', 'Jakarta Commons-HttpClient/3.0.1');
+				// XMLHttpRequest.setRequestHeader('Host', 'https://aliaksei-varyvada-dev-ed.lightning.force.com/');
+				// XMLHttpRequest.setRequestHeader('Content-Length', base64Image.size);
+				xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq');
+				// xhr.setRequestHeader('Accept', 'application/json');
+				// xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+				// xhr.setRequestHeader('Content-Disposition', 'form-data; name="json"');
+				// xhr.setRequestHeader('Content-Disposition', 'form-data; name="fileUpload"; filename="avatar.jpg');
+
+				xhr.onloadend = function() {
+					if (xhr.status == 200) {
+						console.log("Успех");
+					} else {
+						console.log("Ошибка " + this.status);
+					}
+				};
+
+				xhr.send(base64Image);
+
+			}
+
+			function onFail(message) {
+				alert('Failed because: ' + message);
+			}
 		}
 
+
+
+		function dataURItoBlob(dataURI) {
+			// convert base64/URLEncoded data component to raw binary data held in a string
+			var byteString;
+			if (dataURI.split(',')[0].indexOf('base64') >= 0)
+				byteString = atob(dataURI.split(',')[1]);
+			else
+				byteString = unescape(dataURI.split(',')[1]);
+
+			// separate out the mime component
+			var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+			// write the bytes of the string to a typed array
+			var ia = new Uint8Array(byteString.length);
+			for (var i = 0; i < byteString.length; i++) {
+				ia[i] = byteString.charCodeAt(i);
+			}
+
+			return new Blob([ia], { type: mimeString });
+		}
 
 
 		/* This method will render a list of contacts from current salesforce org */
@@ -71,6 +161,7 @@
 			fetchRecords(creds.userId, function (data) {
 				userId = creds.userId;
 				var users = data.records;
+				authToken = creds.accessToken
 				console.log('Success SOQL');
 				console.log(creds.userId);
 				console.log(users[0].MediumPhotoUrl);
@@ -78,7 +169,7 @@
 				var mediumImg = users[0].SmallBannerPhotoUrl;
 
 				var backImageHeader = ('https://na174.lightning.force.com/' + mediumImg + '?oauth_token=' +
-					creds.accessToken);
+					authToken);
 
 
 				document.getElementsByClassName('logout-btn-container')[0].style.backgroundImage = 'url(\'' +
@@ -91,7 +182,7 @@
 					'<img class="avatar" id ="photo-tag" src = "https://na174.lightning.force.com/' +
 					users[0].MediumPhotoUrl +
 					'?oauth_token=' +
-					creds.accessToken + ' ">';
+					authToken + ' ">';
 
 
 				document.getElementById('fname-text').innerText = users[0].FirstName;
@@ -129,10 +220,6 @@
 				alert('Failed to fetch contacts: ' + error);
 			});
 		};
-
-
-		var userId;
-		var editId;
 
 
 		function editFieldGetId(object) {
@@ -376,6 +463,7 @@
 	</button>
 </div>
 <br>
+
 <button onclick="openCamera()">
 	makePhoto
 </button>
@@ -383,6 +471,7 @@
 <button onclick="savePhoto()">
 	savePhoto
 </button>
+
 <table id="myTable">
 	<thead>
 

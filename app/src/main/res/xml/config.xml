@@ -54,4 +54,9 @@
     <feature name="com.salesforce.mobilesync">
         <param name="android-package" value="com.salesforce.androidsdk.phonegap.plugin.MobileSyncPlugin" />
     </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
 </widget>
