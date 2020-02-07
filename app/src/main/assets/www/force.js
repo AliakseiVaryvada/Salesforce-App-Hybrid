@@ -425,7 +425,6 @@ var force = (function () {
         if (networkPlugin) {
 			console.log('PLUGIN');
 			requestWithPlugin(obj, successHandler, errorHandler, returnBinary,doesNotRequireAuthentication);
-
         } else {
 			//BROWSER DOWN
 			requestWithBrowser(obj, successHandler, errorHandler, returnBinary,doesNotRequireAuthentication);
@@ -501,6 +500,7 @@ var force = (function () {
            }
            url =  url + obj.path;
        }
+       console.log(url)
 
         // dev friendly API: Add leading '/' if missing so url + path concat always works
         if (obj.params) {
@@ -508,7 +508,7 @@ var force = (function () {
         }
 
         xhr.onreadystatechange = function () {
-
+			console.log(xhr.status)
             if (xhr.readyState === 4) {
                 if (xhr.status > 199 && xhr.status < 300) {
                     if (typeof successHandler === "function") {
@@ -676,7 +676,7 @@ var force = (function () {
             errorHandler
         );
     }
-
+l
     /**
      * Convenience function to execute a SOQL query
      * @param soql

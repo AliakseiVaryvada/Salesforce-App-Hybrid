@@ -147,13 +147,13 @@
 
 
 				var params = {
-					oauth:
-						{
-							access_token: authToken,
-							refresh_token: refToken
-						},
-					path: 'https://aliaksei-varyvada-dev-ed.lightning.force.com/services/data/v47.0/connect/user-profiles/me/photo',
-					method: '',
+					// oauth:
+					// 	{
+					// 		access_token: authToken,
+					// 		refresh_token: refToken
+					// 	},
+					path: '/v47.0/connect/user-profiles/me/photo',
+					method: 'GET',
 					endPoint: '/services/data'
 
 				};
@@ -164,15 +164,13 @@
 					function successHandler() {
 						alert('Success');
 					},
-
 					function errorHandler(error) {
 						console.log(error);
 
 						alert('errorUpdate' + JSON.stringify(error));
-						error.toString()
 					},
-					false,
-					true
+					true,
+					false
 				);
 
 				// force.anyrest(
