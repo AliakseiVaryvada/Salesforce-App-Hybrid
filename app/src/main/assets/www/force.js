@@ -88,7 +88,6 @@ var force = (function () {
     // Testing only
        requestHandler;
 
-
     /*
      * Determines the request base URL.
      */
@@ -354,7 +353,7 @@ var force = (function () {
                 // Initialize ForceJS
                 init({accessToken: creds.accessToken, instanceURL: creds.instanceUrl, refreshToken: creds.refreshToken});
                 if (typeof successHandler === "function") successHandler();
-				salesforceSessionRefreshed(creds);
+				salesforceSessionRefreshed(creds, oauth);
             };
 
             var authFailure = function(error) {
@@ -412,19 +411,24 @@ var force = (function () {
      *  headerParams: parameters to send as header values for POST/PATCH etc - Optional
      * @param successHandler - function to call back when request succeeds - Optional
      * @param errorHandler - function to call back when request fails - Optional
-     * @param returnBinary - if true, response is encoded and returned as {encodedBody:"base64-encoded-response", contentType:"content-type"} - optional
+     * @param returnBinary - if true, response is encoded and
+	 * returned as {encodedBody:"base64-encoded-response", contentType:"content-type"} - optional
      * @param doesNotRequireAuthentication - if true user context will not be used to make api call.
      */
     function request(obj, successHandler, errorHandler, returnBinary,doesNotRequireAuthentication) {
         if (typeof requestHandler === "function") {
+			console.log('HERE');
             return requestHandler(obj);
         }
-
+		console.log(obj);
         // NB: networkPlugin will be defined only if login was done through plugin and container is using Mobile SDK 5.0 or above
         if (networkPlugin) {
-            requestWithPlugin(obj, successHandler, errorHandler, returnBinary,doesNotRequireAuthentication);
+			console.log('PLUGIN');
+			requestWithPlugin(obj, successHandler, errorHandler, returnBinary,doesNotRequireAuthentication);
+
         } else {
-            requestWithBrowser(obj, successHandler, errorHandler, returnBinary,doesNotRequireAuthentication);
+			//BROWSER DOWN
+			requestWithBrowser(obj, successHandler, errorHandler, returnBinary,doesNotRequireAuthentication);
         }
     }
 
@@ -453,8 +457,28 @@ var force = (function () {
     }
 
     function requestWithPlugin(obj, successHandler, errorHandler, returnBinary,doesNotRequireAuthentication) {
+    	console.log('HERE!')
         var obj2 =  computeEndPointIfMissing(obj.endPoint, obj.path);
-        networkPlugin.sendRequest(obj2.endPoint, obj2.path, successHandler, errorHandler, obj.method, obj.data || obj.params, obj.headerParams, null /* file params */, returnBinary,doesNotRequireAuthentication);
+		console.log(obj2.endPoint);
+		console.log(obj2.path);
+		console.log(obj.method);
+		console.log(obj.data);
+		console.log(obj.params);
+		console.log(obj.headerParams);
+		console.log(returnBinary);
+		console.log(doesNotRequireAuthentication);
+        networkPlugin.sendRequest(
+        	obj2.endPoint,
+			obj2.path,
+			successHandler,
+			errorHandler,
+			obj.method,
+			obj.data || obj.params,
+			obj.headerParams,
+			null /* file params */,
+			returnBinary,
+			doesNotRequireAuthentication
+		);
     }
 
     function requestWithBrowser(obj, successHandler, errorHandler, returnBinary,doesNotRequireAuthentication) {
@@ -465,7 +489,6 @@ var force = (function () {
             }
             return;
         }
-
         var method = obj.method || 'GET',
             xhr = new XMLHttpRequest(),
             url = getRequestBaseURL();
@@ -485,6 +508,7 @@ var force = (function () {
         }
 
         xhr.onreadystatechange = function () {
+
             if (xhr.readyState === 4) {
                 if (xhr.status > 199 && xhr.status < 300) {
                     if (typeof successHandler === "function") {
@@ -896,7 +920,8 @@ var force = (function () {
     function chatter(params, successHandler, errorHandler) {
 
         var base = "/services/data/" + apiVersion + "/chatter";
-
+		console.log(params.path);
+		console.log(params);
         if (!params || !params.path) {
             errorHandler("You must specify a path for the request");
             return;

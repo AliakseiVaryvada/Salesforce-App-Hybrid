@@ -21,6 +21,7 @@
 	<script>
 
 		var authToken;
+		var refToken;
 		var userId;
 		var editId;
 
@@ -68,7 +69,7 @@
 		// }
 
 		function openCamera() {
-			navigator.camera.getPicture(onSuccess, onFail,{
+			navigator.camera.getPicture(onSuccess, onFail, {
 				quality: 25,
 				destinationType: Camera.DestinationType.DATA_URL
 			});
@@ -103,28 +104,93 @@
 				// 	'\n'+ imageData +'\n--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq--';
 
 				// let formData = new FormData(document.forms.person);
+				//
+				// let xhr = new XMLHttpRequest();
+				// xhr.open('POST', urlPhotoFolder);
+				// // xhr.setRequestHeader('Authorization', authToken);
+				// // xhr.setRequestHeader('User-Agent', 'Jakarta Commons-HttpClient/3.0.1');
+				// // XMLHttpRequest.setRequestHeader('Host', 'https://aliaksei-varyvada-dev-ed.lightning.force.com/');
+				// // XMLHttpRequest.setRequestHeader('Content-Length', base64Image.size);
+				// xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+				// xhr.setRequestHeader('Content-Type', 'image/jpeg');
+				// // xhr.setRequestHeader('Accept', 'application/json');
+				// // xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+				// // xhr.setRequestHeader('Content-Disposition', 'form-data; name="json"');
+				// // xhr.setRequestHeader('Content-Disposition', 'form-data; name="fileUpload"; filename="avatar.jpg');
+				//
+				// xhr.onloadend = function() {
+				// 	if (xhr.status == 200) {
+				// 		console.log("Успех");
+				// 	} else {
+				// 		console.log(xhr.response);
+				// 		console.log("Ошибка " + this.status);
+				// 	}
+				// };
+				// console.log(xhr.response);
+				// xhr.send(base64Image);
 
-				let xhr = new XMLHttpRequest();
-				xhr.open('POST', urlPhotoFolder);
-				// xhr.setRequestHeader('Authorization', authToken);
-				// xhr.setRequestHeader('User-Agent', 'Jakarta Commons-HttpClient/3.0.1');
-				// XMLHttpRequest.setRequestHeader('Host', 'https://aliaksei-varyvada-dev-ed.lightning.force.com/');
-				// XMLHttpRequest.setRequestHeader('Content-Length', base64Image.size);
-				xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq');
-				// xhr.setRequestHeader('Accept', 'application/json');
-				// xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-				// xhr.setRequestHeader('Content-Disposition', 'form-data; name="json"');
-				// xhr.setRequestHeader('Content-Disposition', 'form-data; name="fileUpload"; filename="avatar.jpg');
+				// force.anyrest(urlPhotoFolder, binaryImage, false,
+				// 	{
+				// 		method: 'POST',
+				// 		Authorization: 'OAuth ' + authToken,
+				// 		contentType: 'multipart/form-data'
+				// 	},
+				// 	function successHandler(error) {
+				// 		alert('Success' + error);
+				// 	},
+				// 	function errorHandler(error) {
+				// 	console.log(error);
+				// 		alert('errorUpdate' + error);
+				// 	}
+				//
+				// )
 
-				xhr.onloadend = function() {
-					if (xhr.status == 200) {
-						console.log("Успех");
-					} else {
-						console.log("Ошибка " + this.status);
-					}
+
+				var params = {
+					oauth:
+						{
+							access_token: authToken,
+							refresh_token: refToken
+						},
+					path: 'https://aliaksei-varyvada-dev-ed.lightning.force.com/services/data/v47.0/connect/user-profiles/me/photo',
+					method: '',
+					endPoint: '/services/data'
+
 				};
 
-				xhr.send(base64Image);
+
+				force.request(
+					params,
+					function successHandler() {
+						alert('Success');
+					},
+
+					function errorHandler(error) {
+						console.log(error);
+
+						alert('errorUpdate' + JSON.stringify(error));
+						error.toString()
+					},
+					false,
+					true
+				);
+
+				// force.anyrest(
+				// 	'https://aliaksei-varyvada-dev-ed.lightning.force.com/services/data/v47.0/connect/user-profiles/me/photo',
+				// 	true,
+				// 	true,
+				// 	params,
+				// 	function successHandler(error) {
+				// 			alert('Success' + error);
+				// 		},
+				//
+				// 		function errorHandler(error) {
+				// 		console.log(error);
+				//
+				// 		alert('errorUpdate' + error);
+				//
+				// 		})
+
 
 			}
 
@@ -134,14 +200,14 @@
 		}
 
 
-
 		function dataURItoBlob(dataURI) {
 			// convert base64/URLEncoded data component to raw binary data held in a string
 			var byteString;
-			if (dataURI.split(',')[0].indexOf('base64') >= 0)
+			if (dataURI.split(',')[0].indexOf('base64') >= 0) {
 				byteString = atob(dataURI.split(',')[1]);
-			else
+			} else {
 				byteString = unescape(dataURI.split(',')[1]);
+			}
 
 			// separate out the mime component
 			var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
@@ -152,7 +218,7 @@
 				ia[i] = byteString.charCodeAt(i);
 			}
 
-			return new Blob([ia], { type: mimeString });
+			return new Blob([ia], {type: mimeString});
 		}
 
 
@@ -161,7 +227,7 @@
 			fetchRecords(creds.userId, function (data) {
 				userId = creds.userId;
 				var users = data.records;
-				authToken = creds.accessToken
+				authToken = creds.accessToken;
 				console.log('Success SOQL');
 				console.log(creds.userId);
 				console.log(users[0].MediumPhotoUrl);
@@ -179,10 +245,10 @@
 
 
 				document.getElementById('photo').innerHTML =
-					'<img class="avatar" id ="photo-tag" src = "https://na174.lightning.force.com/' +
+					'<a onclick="openCamera()"><img class="avatar" id ="photo-tag" src = "https://na174.lightning.force.com/' +
 					users[0].MediumPhotoUrl +
 					'?oauth_token=' +
-					authToken + ' ">';
+					authToken + ' "></a>';
 
 
 				document.getElementById('fname-text').innerText = users[0].FirstName;
@@ -200,7 +266,8 @@
 			sfOAuthPlugin.logout();
 		}
 
-		function salesforceSessionRefreshed(creds) {
+		function salesforceSessionRefreshed(creds, oauth) {
+			refToken = oauth.refresh_token;
 			window.userID = creds.userId;
 			showUser(creds);
 		}
@@ -225,9 +292,11 @@
 		function editFieldGetId(object) {
 			editId = object.id;
 			document.getElementById('value').placeholder = object.id;
+			document.getElementById('value').type = 'text';
 			if (editId == 'Phone') {
+				alert('tele');
+				document.getElementById('value').type = 'tel';
 				document.getElementById('value').placeholder = '375_ _ _ _ _ _ _ _ _';
-				document.getElementById('value').pattern = '[7|8|9|(375)][0-9]{9|11}';
 			}
 			if (editId == 'Email') {
 				document.getElementById('value').placeholder = 'Email@mail.ru';
@@ -237,9 +306,9 @@
 		}
 
 
-
 		function saveFieldAfterEdit() {
 			var inputText = document.getElementById('value').value;
+
 			if (inputText !== '') {
 				force.update(
 					'User',
@@ -264,6 +333,7 @@
 				alert('Please, fill input field.');
 			}
 		}
+
 		//
 		// function savePhoto() {
 		// 	force.chatter(
@@ -306,10 +376,10 @@
 		// }
 
 
-
 	</script>
 	<style>
 		table {
+
 			font-family: Arial, Helvetica, sans-serif;
 			width: 100%;
 		}
@@ -434,21 +504,39 @@
 			background: green;
 		}
 
+		.edit-button {
+			font-family: "Roboto", sans-serif;
+			text-transform: uppercase;
+			outline: 0;
+			background: #4CAF50;
+			width: 100%;
+			padding: 5px 20px 5px;
+			color: #FFFFFF;
+			font-size: 14px;
+			cursor: pointer;
+			border-radius: 5px;
+			border: 0 solid rgba(16, 74, 255, 0.49);
+
+		}
+
+		.edit-button:hover,
+		.edit-button:active,
+		.edit-button:focus {
+			background: #43A047;
+		}
 
 	</style>
 </head>
 
 <body class="container">
 
-<!--<button class="trigger">Click here to trigger the modal!</button>-->
-
 <div class="modal">
 	<div class="modal-content">
 		<span class="close-button" onclick="toggleModal()">&times;</span>
-
+<br>
 		<form onsubmit="saveFieldAfterEdit()">
 			<label for="value">Enter value:</label>
-			<input id="value" required type="text" name="value">
+			<input id="value" type="text" required name="value">
 			<button class="submit-modal" type="submit">Submit</button>
 		</form>
 
@@ -462,15 +550,6 @@
 		Logout
 	</button>
 </div>
-<br>
-
-<button onclick="openCamera()">
-	makePhoto
-</button>
-
-<button onclick="savePhoto()">
-	savePhoto
-</button>
 
 <table id="myTable">
 	<thead>
@@ -486,35 +565,35 @@
 		<td>FirstName:</td>
 		<td id="fname-text"></td>
 		<td>
-			<button id="FirstName" onclick="editFieldGetId(this)">Edit</button>
+			<button class="edit-button" id="FirstName" onclick="editFieldGetId(this)">Edit</button>
 		</td>
 	</tr>
 	<tr>
 		<td>LastName:</td>
 		<td id="lname-text"></td>
 		<td>
-			<button id="LastName" onclick="editFieldGetId(this)">Edit</button>
+			<button class="edit-button" id="LastName" onclick="editFieldGetId(this)">Edit</button>
 		</td>
 	</tr>
 	<tr>
 		<td>Nickname:</td>
 		<td id="nickname-text"></td>
 		<td>
-			<button id="CommunityNickname" onclick="editFieldGetId(this)">Edit</button>
+			<button class="edit-button" id="CommunityNickname" onclick="editFieldGetId(this)">Edit</button>
 		</td>
 	</tr>
 	<tr>
 		<td>Country:</td>
 		<td id="country-text"></td>
 		<td>
-			<button id="Country" onclick="editFieldGetId(this)">Edit</button>
+			<button class="edit-button" id="Country" onclick="editFieldGetId(this)">Edit</button>
 		</td>
 	</tr>
 	<tr>
 		<td>Email:</td>
 		<td id="email-text"></td>
 		<td>
-			<button id="Email" onclick="editFieldGetId(this)">Edit</button>
+			<button class="edit-button" id="Email" onclick="editFieldGetId(this)">Edit</button>
 		</td>
 	</tr>
 	<tr>
@@ -523,7 +602,7 @@
 		<td id="mobile-text"></td>
 
 		<td>
-			<button id="Phone" onclick="editFieldGetId(this)">Edit</button>
+			<button class="edit-button" id="Phone" onclick="editFieldGetId(this)">Edit</button>
 		</td>
 
 	</tr>
