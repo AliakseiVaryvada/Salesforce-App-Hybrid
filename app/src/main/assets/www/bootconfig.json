@@ -1,7 +1,8 @@
 {
     "remoteAccessConsumerKey": "3MVG9LBJLApeX_PDZGTcBGScDUr7RRiu6vpXLKtwsR9.cfJapELRIvBh_a8k_tPxFuB4eRqCRLmAmRsnyIokD",
     "oauthRedirectURI": "mobileapp://auth/success",
-    "oauthScopes": ["web", "api"],
+    "oauthScopes": ["api","web","full","chatter_api","visualforce","openid","custom_permissions","refresh_token","offline_access",
+      "id", "profile", "email", "address", "phone"],
     "isLocal": true,
     "startPage": "index.html",
     "errorPage": "error.html",

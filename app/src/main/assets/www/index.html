@@ -34,39 +34,7 @@
 				console.log('Auth failed: ' + error);
 			}
 		);
-		// function openCamera(){
-		//
-		// 	navigator.camera.getPicture(
-		//
-		// 		 function successUpdate(imageURI) {
-		// 			alert('Success');
-		// 			var image = document.getElementById('photo-tag');
-		// 			image.src = imageURI;
-		//
-		// 			// let xhr = new XMLHttpRequest();
-		// 			// alert('request');
-		// 			// console.log(imageURI);
-		// 			//  xhr.onloadend = function() {
-		// 			// 	 if (xhr.status == 200) {
-		// 			// 		 console.log("Успех");
-		// 			// 	 } else {
-		// 			// 		 console.log("Ошибка " + this.status);
-		// 			// 		 console.log("Ошибка " + this.readyState);
-		// 			// 	 }
-		// 			//  };
-		// 			//  xhr.open("POST", "/services/data/v47.0/connect/user-profiles/me/photo");
-		// 			//  xhr.send(imageURI);
-		//
-		// 		},
-		// 		function errorUpdate(error) {
-		// 			alert('errorUpdate' + error);
-		// 		},
-		// 		// {
-		// 		// 	quality: 50,
-		// 		// 	destinationType: Camera.DestinationType.DATA_URL
-		// 		// }
-		// 	);
-		// }
+
 
 		function openCamera() {
 			navigator.camera.getPicture(onSuccess, onFail, {
@@ -78,83 +46,25 @@
 				alert('Success');
 				var image = document.getElementById('photo-tag');
 				image.src = 'data:image/jpeg;base64,' + imageData;
+
 				var urlPhotoFolder = 'https://aliaksei-varyvada-dev-ed.lightning.force.com/services/data/v47.0/connect/user-profiles/me/photo';
 
 				var base64Image = 'data:image/jpeg;base64,' + imageData;
 				var binaryImage = dataURItoBlob(base64Image);
 
-
-				// var requestBody = 'POST '+urlPhotoFolder+'\n' +
-				// 	'\nAuthorization: OAuth ' + authToken + 'User-Agent: Jakarta Commons-HttpClient/3.0.1\n'+
-				// 	'Host: https://aliaksei-varyvada-dev-ed.lightning.force.com/' +
-				// 	'\nContent-Length: '+ base64Image.size+
-				// 	'\nContent-Type: multipart/form-data; boundary=a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq\n'+
-				// 	'Accept: application/json\n\n' +
-				// 	'--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq\n' +
-				// 	'Content-Type: application/json; charset=UTF-8\n' +
-				// 	'Content-Disposition: form-data; name="json"\n\n' +
-				// 	'{\n' +
-				// 	'"cropX" : "0",\n' +
-				// 	'"cropY" : "0",\n' +
-				// 	'"cropSize" : "200"\n' +
-				// 	'}\n' +
-				// 	'--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq\n'+
-				// 	'Content-Disposition: form-data; name="fileUpload"; filename="avatar.jpg"\n' +
-				// 	'Content-Type: application/octet-stream; charset=ISO-8859-1\n' +
-				// 	'\n'+ imageData +'\n--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq--';
-
-				// let formData = new FormData(document.forms.person);
-				//
-				// let xhr = new XMLHttpRequest();
-				// xhr.open('POST', urlPhotoFolder);
-				// // xhr.setRequestHeader('Authorization', authToken);
-				// // xhr.setRequestHeader('User-Agent', 'Jakarta Commons-HttpClient/3.0.1');
-				// // XMLHttpRequest.setRequestHeader('Host', 'https://aliaksei-varyvada-dev-ed.lightning.force.com/');
-				// // XMLHttpRequest.setRequestHeader('Content-Length', base64Image.size);
-				// xhr.setRequestHeader('Content-Type', 'multipart/form-data');
-				// xhr.setRequestHeader('Content-Type', 'image/jpeg');
-				// // xhr.setRequestHeader('Accept', 'application/json');
-				// // xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-				// // xhr.setRequestHeader('Content-Disposition', 'form-data; name="json"');
-				// // xhr.setRequestHeader('Content-Disposition', 'form-data; name="fileUpload"; filename="avatar.jpg');
-				//
-				// xhr.onloadend = function() {
-				// 	if (xhr.status == 200) {
-				// 		console.log("Успех");
-				// 	} else {
-				// 		console.log(xhr.response);
-				// 		console.log("Ошибка " + this.status);
-				// 	}
-				// };
-				// console.log(xhr.response);
-				// xhr.send(base64Image);
-
-				// force.anyrest(urlPhotoFolder, binaryImage, false,
-				// 	{
-				// 		method: 'POST',
-				// 		Authorization: 'OAuth ' + authToken,
-				// 		contentType: 'multipart/form-data'
-				// 	},
-				// 	function successHandler(error) {
-				// 		alert('Success' + error);
-				// 	},
-				// 	function errorHandler(error) {
-				// 	console.log(error);
-				// 		alert('errorUpdate' + error);
-				// 	}
-				//
-				// )
-
+				console.log(userId);
 
 				var params = {
-					// oauth:
-					// 	{
-					// 		access_token: authToken,
-					// 		refresh_token: refToken
-					// 	},
-					path: '/v47.0/connect/user-profiles/me/photo',
-					method: 'GET',
-					endPoint: '/services/data'
+
+					path: 'services/apexrest/photo',
+					method: 'POST',
+					endPoint: '/',
+					data:
+						{
+							userId: userId,
+							communityId: "0DB6g000000XaXMGA0",
+							basePhoto: imageData
+						}
 
 				};
 
@@ -172,23 +82,6 @@
 					true,
 					false
 				);
-
-				// force.anyrest(
-				// 	'https://aliaksei-varyvada-dev-ed.lightning.force.com/services/data/v47.0/connect/user-profiles/me/photo',
-				// 	true,
-				// 	true,
-				// 	params,
-				// 	function successHandler(error) {
-				// 			alert('Success' + error);
-				// 		},
-				//
-				// 		function errorHandler(error) {
-				// 		console.log(error);
-				//
-				// 		alert('errorUpdate' + error);
-				//
-				// 		})
-
 
 			}
 
@@ -224,6 +117,7 @@
 		function showUser(creds) {
 			fetchRecords(creds.userId, function (data) {
 				userId = creds.userId;
+				var communityId = creds.commu
 				var users = data.records;
 				authToken = creds.accessToken;
 				console.log('Success SOQL');
@@ -268,6 +162,7 @@
 			refToken = oauth.refresh_token;
 			window.userID = creds.userId;
 			showUser(creds);
+
 		}
 
 
@@ -331,48 +226,6 @@
 				alert('Please, fill input field.');
 			}
 		}
-
-		//
-		// function savePhoto() {
-		// 	force.chatter(
-		//
-		// // 		POST /services/data/v46.0/chatter/users/me/photo HTTP/1.1
-		// // 	Authorization: OAuth
-		// 	00DD0000000Jhd2!AQIAQC.lh4qTQcBhOPm4TZom5IaOOZLVPVK4wI_rPYJvmE8r2VW8XA.
-		// 		OZ7S29JEM_7Ctq1lst2dzoV.owisJc0KacUbDxyae
-		// 	User-Agent: Jakarta Commons-HttpClient/3.0.1
-		// 	Host: instance_name
-		// 	Content-Length: 543
-		// 	Content-Type: multipart/form-data; boundary=a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq
-		// 	Accept: application/json
-		// 	--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq
-		// 	Content-Type: application/json; charset=UTF-8
-		// 	Content-Disposition: form-data; name="json"
-		// 	{
-		// 		"cropX" : "0",
-		// 		"cropY" : "0",
-		// 		"cropSize" : "200"
-		// 	}
-		// 	--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq
-		// 	Content-Disposition: form-data; name="fileUpload"; filename="myPhoto.jpg"
-		// 	Content-Type: application/octet-stream; charset=ISO-8859-1
-		// ...contents of myPhoto.jpg...
-		// 	--a7V4kRcFA8E79pivMuV2tukQ85cmNKeoEgJgq--,
-		//
-
-
-		// 		function successUpdate() {
-		// 			alert('Success');
-		// 		},
-		//
-		// 		function errorUpdate(error) {
-		//
-		// 				+'/following?page=1');
-		// 			alert('errorUpdate' + error);
-		// 		}
-		// );
-		// }
-
 
 	</script>
 	<style>
@@ -526,12 +379,13 @@
 	</style>
 </head>
 
+
 <body class="container">
 
 <div class="modal">
 	<div class="modal-content">
 		<span class="close-button" onclick="toggleModal()">&times;</span>
-<br>
+		<br>
 		<form onsubmit="saveFieldAfterEdit()">
 			<label for="value">Enter value:</label>
 			<input id="value" type="text" required name="value">

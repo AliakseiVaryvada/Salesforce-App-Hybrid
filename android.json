@@ -139,7 +139,7 @@
               "plugin": "com.salesforce",
               "oldAttrib": {
                 "android:hardwareAccelerated": "true",
-                "android:icon": "@drawable/sf__icon",
+                "android:icon": "@mipmap/ic_launcher",
                 "android:label": "@string/app_name",
                 "android:manageSpaceActivity": "com.salesforce.androidsdk.ui.ManageSpaceActivity",
                 "android:name": "com.salesforce.androidsdk.phonegap.app.HybridApp",

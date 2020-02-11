@@ -196,7 +196,7 @@ var force = (function () {
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState === 4) {
 				if (xhr.status === 200) {
-					console.log('Token refreshed');
+					console.log('Token refreshed');request
 					var res = JSON.parse(xhr.responseText);
 					oauth.access_token = res.access_token;
 					tokenStore.forceOAuth = JSON.stringify(oauth);
