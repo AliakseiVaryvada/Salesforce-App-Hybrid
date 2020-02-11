@@ -16,216 +16,167 @@
 	</style>
 	<script src="cordova.js"></script>
 	<script src="force.js"></script>
-	<!--	<script src="plugins/cordova-plugin-camera/www/Camera.js"></script>-->
-
 	<script>
 
-		var authToken;
-		var refToken;
-		var userId;
-		var editId;
-
-		/* Do login */
-		force.login(
-			function () {
-				console.log('Auth succeeded');
-			},
-			function (error) {
-				console.log('Auth failed: ' + error);
-			}
-		);
-
-
-		function openCamera() {
-			navigator.camera.getPicture(onSuccess, onFail, {
-				quality: 25,
-				destinationType: Camera.DestinationType.DATA_URL
-			});
-
-			function onSuccess(imageData) {
-				alert('Success');
-				var image = document.getElementById('photo-tag');
-				image.src = 'data:image/jpeg;base64,' + imageData;
-
-				var urlPhotoFolder = 'https://aliaksei-varyvada-dev-ed.lightning.force.com/services/data/v47.0/connect/user-profiles/me/photo';
-
-				var base64Image = 'data:image/jpeg;base64,' + imageData;
-				var binaryImage = dataURItoBlob(base64Image);
-
-				console.log(userId);
-
-				var params = {
-
-					path: 'services/apexrest/photo',
-					method: 'POST',
-					endPoint: '/',
-					data:
-						{
-							userId: userId,
-							communityId: "0DB6g000000XaXMGA0",
-							basePhoto: imageData
-						}
-
-				};
-
-
-				force.request(
-					params,
-					function successHandler() {
-						alert('Success');
-					},
-					function errorHandler(error) {
-						console.log(error);
-
-						alert('errorUpdate' + JSON.stringify(error));
-					},
-					true,
-					false
-				);
-
-			}
-
-			function onFail(message) {
-				alert('Failed because: ' + message);
-			}
-		}
-
-
-		function dataURItoBlob(dataURI) {
-			// convert base64/URLEncoded data component to raw binary data held in a string
-			var byteString;
-			if (dataURI.split(',')[0].indexOf('base64') >= 0) {
-				byteString = atob(dataURI.split(',')[1]);
-			} else {
-				byteString = unescape(dataURI.split(',')[1]);
-			}
-
-			// separate out the mime component
-			var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-
-			// write the bytes of the string to a typed array
-			var ia = new Uint8Array(byteString.length);
-			for (var i = 0; i < byteString.length; i++) {
-				ia[i] = byteString.charCodeAt(i);
-			}
-
-			return new Blob([ia], {type: mimeString});
-		}
-
-
-		/* This method will render a list of contacts from current salesforce org */
-		function showUser(creds) {
-			fetchRecords(creds.userId, function (data) {
-				userId = creds.userId;
-				var communityId = creds.commu
-				var users = data.records;
-				authToken = creds.accessToken;
-				console.log('Success SOQL');
-				console.log(creds.userId);
-				console.log(users[0].MediumPhotoUrl);
-				var name = users[0].Name;
-				var mediumImg = users[0].SmallBannerPhotoUrl;
-
-				var backImageHeader = ('https://na174.lightning.force.com/' + mediumImg + '?oauth_token=' +
-					authToken);
-
-
-				document.getElementsByClassName('logout-btn-container')[0].style.backgroundImage = 'url(\'' +
-					backImageHeader + '\')';
-
-				document.getElementById('hello').innerText = 'Welcome ' + users[0].FirstName;
-
-
-				document.getElementById('photo').innerHTML =
-					'<a onclick="openCamera()"><img class="avatar" id ="photo-tag" src = "https://na174.lightning.force.com/' +
-					users[0].MediumPhotoUrl +
-					'?oauth_token=' +
-					authToken + ' "></a>';
-
-
-				document.getElementById('fname-text').innerText = users[0].FirstName;
-				document.getElementById('lname-text').innerText = users[0].LastName;
-				document.getElementById('nickname-text').innerText = users[0].CommunityNickname;
-				document.getElementById('country-text').innerText = users[0].Country;
-				document.getElementById('email-text').innerText = users[0].Email;
-				document.getElementById('mobile-text').innerText = users[0].Phone;
-
-			});
-		};
-
-		function logout() {
-			var sfOAuthPlugin = cordova.require('com.salesforce.plugin.oauth');
-			sfOAuthPlugin.logout();
-		}
-
-		function salesforceSessionRefreshed(creds, oauth) {
-			refToken = oauth.refresh_token;
-			window.userID = creds.userId;
-			showUser(creds);
-
-		}
-
-
-		/* This method will fetch a list of contact records from salesforce.
-		Just change the soql query to fetch another sobject. */
-
-		var fetchRecords = function (credsId, successHandler) {
-			var soql =
-				'SELECT id,Name,TimeZoneSidKey,Username, MobilePhone, Phone, SmallBannerPhotoUrl, CommunityNickname, MediumPhotoUrl, ' +
-				'Alias,Country,Email,FirstName,LastName,IsActive,IsPortalEnabled FROM User WHERE ID = \'' +
-				credsId +
-				'\'';
-
-			force.query(soql, successHandler, function (error) {
-				alert('Failed to fetch contacts: ' + error);
-			});
-		};
-
-
-		function editFieldGetId(object) {
-			editId = object.id;
-			document.getElementById('value').placeholder = object.id;
-			document.getElementById('value').type = 'text';
-			if (editId == 'Phone') {
-				alert('tele');
-				document.getElementById('value').type = 'tel';
-				document.getElementById('value').placeholder = '375_ _ _ _ _ _ _ _ _';
-			}
-			if (editId == 'Email') {
-				document.getElementById('value').placeholder = 'Email@mail.ru';
-				document.getElementById('value').type = 'email';
-			}
-			toggleModal();
-		}
-
-
-		function saveFieldAfterEdit() {
-			var inputText = document.getElementById('value').value;
-
-			if (inputText !== '') {
-				force.update(
-					'User',
-					{'id': userId, [editId]: inputText},
-					function successUpdate() {
-						force.login(
-							function () {
-								console.log('Auth succeeded');
-							},
-							function (error) {
-								console.log('Auth failed: ' + error);
-							}
-						);
-						alert('Success');
-						toggleModal();
-					},
-					function errorUpdate(error) {
-						alert('errorUpdate' + error);
-					}
-				);
-			} else {
-				alert('Please, fill input field.');
-			}
-		}
+		// let authToken;
+		// let refToken;
+		// let userId;
+		// let editId;
+		//
+		// /* Do login */
+		// force.login(
+		// 	function () {
+		// 		console.log('Auth succeeded');
+		// 	},
+		// 	function (error) {
+		// 		console.log('Auth failed: ' + error);
+		// 	}
+		// );
+		//
+		// function logout() {
+		// 	var sfOAuthPlugin = cordova.require('com.salesforce.plugin.oauth');
+		// 	sfOAuthPlugin.logout();
+		// }
+		//
+		// function openCamera() {
+		// 	navigator.camera.getPicture(onSuccess, onFail, {
+		// 		quality: 25,
+		// 		destinationType: Camera.DestinationType.DATA_URL
+		// 	});
+		//
+		// 	function onSuccess(imageData) {
+		// 		alert('Success');
+		// 		let image = document.getElementById('photo-tag');
+		// 		image.src = 'data:image/jpeg;base64,' + imageData;
+		//
+		// 		let params = {
+		//
+		// 			path: 'services/apexrest/photo',
+		// 			method: 'POST',
+		// 			endPoint: '/',
+		// 			data:
+		// 				{
+		// 					userId: userId,
+		// 					communityId: "0DB6g000000XaXMGA0",
+		// 					basePhoto: imageData
+		// 				}
+		// 		};
+		//
+		// 		force.request(
+		// 			params,
+		// 			function successHandler() {
+		// 				alert('Success');
+		// 			},
+		// 			function errorHandler(error) {
+		// 				console.log(error);
+		// 				alert('errorUpdate' + JSON.stringify(error));
+		// 			},
+		// 			true,
+		// 			false
+		// 		);
+		//
+		// 	}
+		// 	function onFail(message) {
+		// 		alert('Failed because: ' + message);
+		// 	}
+		// }
+		//
+		// function showUser(creds) {
+		// 	fetchRecords(creds.userId, function (data) {
+		// 		userId = creds.userId;
+		// 		let users = data.records;
+		// 		authToken = creds.accessToken;
+		//
+		// 		let name = users[0].Name;
+		// 		let mediumImg = users[0].SmallBannerPhotoUrl;
+		//
+		// 		let backImageHeader = ('https://na174.lightning.force.com/' + mediumImg + '?oauth_token=' +
+		// 			authToken);
+		//
+		// 		document.getElementsByClassName('logout-btn-container')[0].style.backgroundImage = 'url(\'' +
+		// 			backImageHeader + '\')';
+		//
+		// 		document.getElementById('hello').innerText = 'Welcome ' + users[0].FirstName;
+		//
+		// 		document.getElementById('photo').innerHTML =
+		// 			'<a onclick="openCamera()"><img class="avatar" id ="photo-tag" src = "https://na174.lightning.force.com/' +
+		// 			users[0].MediumPhotoUrl +
+		// 			'?oauth_token=' +
+		// 			authToken + ' "></a>';
+		//
+		// 		document.getElementById('fname-text').innerText = users[0].FirstName;
+		// 		document.getElementById('lname-text').innerText = users[0].LastName;
+		// 		document.getElementById('nickname-text').innerText = users[0].CommunityNickname;
+		// 		document.getElementById('country-text').innerText = users[0].Country;
+		// 		document.getElementById('email-text').innerText = users[0].Email;
+		// 		document.getElementById('mobile-text').innerText = users[0].Phone;
+		//
+		// 	});
+		// }
+		//
+		//
+		// function salesforceSessionRefreshed(creds, oauth) {
+		// 	refToken = oauth.refresh_token;
+		// 	window.userID = creds.userId;
+		// 	showUser(creds);
+		//
+		// }
+		//
+		// var fetchRecords = function (credsId, successHandler) {
+		// 	var soql =
+		// 		'SELECT id,Name,Username, MobilePhone, Phone, SmallBannerPhotoUrl, CommunityNickname, MediumPhotoUrl, ' +
+		// 		'Alias,Country,Email,FirstName,LastName,IsPortalEnabled FROM User WHERE ID = \'' +
+		// 		credsId +
+		// 		'\'';
+		// 	force.query(soql, successHandler, function (error) {
+		// 		alert('Failed to fetch contacts: ' + error);
+		// 	});
+		// };
+		//
+		//
+		// function editFieldGetId(object) {
+		// 	editId = object.id;
+		// 	document.getElementById('value').placeholder = object.id;
+		// 	document.getElementById('value').type = 'text';
+		// 	if (editId === 'Phone') {
+		// 		document.getElementById('value').type = 'tel';
+		// 		document.getElementById('value').placeholder = '375_ _ _ _ _ _ _ _ _';
+		// 	}
+		// 	if (editId === 'Email') {
+		// 		document.getElementById('value').placeholder = 'Email@mail.ru';
+		// 		document.getElementById('value').type = 'email';
+		// 	}
+		// 	toggleModal();
+		// }
+		//
+		//
+		// function saveFieldAfterEdit() {
+		// 	var inputText = document.getElementById('value').value;
+		//
+		// 	if (inputText !== '') {
+		// 		force.update(
+		// 			'User',
+		// 			{'id': userId, [editId]: inputText},
+		// 			function successUpdate() {
+		// 				force.login(
+		// 					function () {
+		// 						console.log('Auth succeeded');
+		// 					},
+		// 					function (error) {
+		// 						console.log('Auth failed: ' + error);
+		// 					}
+		// 				);
+		// 				alert('Success');
+		// 				toggleModal();
+		// 			},
+		// 			function errorUpdate(error) {
+		// 				alert('errorUpdate' + error);
+		// 			}
+		// 		);
+		// 	} else {
+		// 		alert('Please, fill input field.');
+		// 	}
+		// }
 
 	</script>
 	<style>
@@ -464,22 +415,23 @@
 
 </body>
 <script>
-	var modal = document.querySelector('.modal');
-	var trigger = document.querySelector('.trigger');
-	var closeButton = document.querySelector('.close-button');
-
-	function toggleModal() {
-		modal.classList.toggle('show-modal');
-	}
-
-	function windowOnClick(event) {
-		if (event.target === modal) {
-			toggleModal();
-		}
-	}
-
-	trigger.addEventListener('click', toggleModal);
-	closeButton.addEventListener('click', toggleModal);
-	window.addEventListener('click', windowOnClick);
+	// var modal = document.querySelector('.modal');
+	// var trigger = document.querySelector('.trigger');
+	// var closeButton = document.querySelector('.close-button');
+	//
+	// function toggleModal() {
+	// 	modal.classList.toggle('show-modal');
+	// }
+	//
+	// function windowOnClick(event) {
+	// 	if (event.target === modal) {
+	// 		toggleModal();
+	// 	}
+	// }
+	//
+	// trigger.addEventListener('click', toggleModal);
+	// closeButton.addEventListener('click', toggleModal);
+	// window.addEventListener('click', windowOnClick);
 </script>
+<script src="main.js"></script>
 </html>
