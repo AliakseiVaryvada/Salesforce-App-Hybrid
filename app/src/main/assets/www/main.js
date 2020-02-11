@@ -20,14 +20,11 @@ function logout() {
 
 function openCamera() {
 	navigator.camera.getPicture(onSuccess, onFail, {
-		quality: 25,
+		quality: 35,
 		destinationType: Camera.DestinationType.DATA_URL
 	});
 
 	function onSuccess(imageData) {
-		alert('Success');
-		let image = document.getElementById('photo-tag');
-		image.src = 'data:image/jpeg;base64,' + imageData;
 
 		let params = {
 
@@ -41,11 +38,21 @@ function openCamera() {
 					basePhoto: imageData
 				}
 		};
-
+		alert('Your photo start upload!');
 		force.request(
 			params,
 			function successHandler() {
-				alert('Success');
+
+				force.login(
+					function () {
+						console.log('Auth succeeded');
+					},
+					function (error) {
+						console.log('Auth failed: ' + error);
+					}
+				);
+				alert('Your photo uploaded!');
+
 			},
 			function errorHandler(error) {
 				console.log(error);
@@ -54,7 +61,6 @@ function openCamera() {
 			true,
 			false
 		);
-
 	}
 
 	function onFail(message) {
@@ -80,7 +86,8 @@ function showUser(creds) {
 		document.getElementById('hello').innerText = 'Welcome ' + users[0].FirstName;
 
 		document.getElementById('photo').innerHTML =
-			'<a onclick="openCamera()"><img class="avatar" id ="photo-tag" src = "https://na174.lightning.force.com/' +
+			'<a onclick="openCamera()">' +
+			'<img class="avatar" id ="photo-tag" src = "https://na174.lightning.force.com/' +
 			users[0].MediumPhotoUrl +
 			'?oauth_token=' +
 			authToken + ' "></a>';
